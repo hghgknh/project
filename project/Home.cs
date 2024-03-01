@@ -12,14 +12,15 @@ namespace project
 {
     public partial class Home : Form
     {
+        public string Adress;
         public Home()
         {
             InitializeComponent();
         }
 
-        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            Adress = textBox1.Text;
         }
     }
 }
