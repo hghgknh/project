@@ -16,5 +16,10 @@ namespace project
         {
             InitializeComponent();
         }
+
+        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
     }
 }
