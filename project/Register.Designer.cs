@@ -86,6 +86,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(209, 20);
             this.textBox1.TabIndex = 7;
+            this.textBox1.Text = "Име";
             // 
             // textBox2
             // 
@@ -93,6 +94,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(209, 20);
             this.textBox2.TabIndex = 8;
+            this.textBox2.Text = "Парола";
             // 
             // contextMenuStrip1
             // 
@@ -105,6 +107,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(209, 20);
             this.textBox3.TabIndex = 10;
+            this.textBox3.Text = "Пожтори парола";
             // 
             // textBox4
             // 
@@ -112,6 +115,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(209, 20);
             this.textBox4.TabIndex = 11;
+            this.textBox4.Text = "Email";
             // 
             // textBox5
             // 
@@ -119,10 +123,11 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(209, 20);
             this.textBox5.TabIndex = 12;
+            this.textBox5.Text = "Място за доставка";
             // 
             // registerBtn
             // 
-            this.registerBtn.Location = new System.Drawing.Point(70, 235);
+            this.registerBtn.Location = new System.Drawing.Point(65, 229);
             this.registerBtn.Name = "registerBtn";
             this.registerBtn.Size = new System.Drawing.Size(165, 31);
             this.registerBtn.TabIndex = 13;
