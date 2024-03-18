@@ -51,7 +51,7 @@ namespace project
 
 
 
-
+        /*
         public DataTable SelectMenu()
         {
             SqlCommand cmd = new SqlCommand("Select * FROM MenuItem", connection);
@@ -60,6 +60,6 @@ namespace project
             adapter.Fill(table);
             adapter.Dispose();
             return table;
-        }
+        }*/
     }
 }
