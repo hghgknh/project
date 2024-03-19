@@ -36,15 +36,15 @@
             this.exit = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
-            this.profile = new System.Windows.Forms.Button();
             this.customerOrder = new System.Windows.Forms.Button();
+            this.profile = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.adminPanel = new System.Windows.Forms.Button();
             this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.adminPanel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -108,8 +108,8 @@
             // sidebar
             // 
             this.sidebar.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.sidebar.Controls.Add(this.customerOrder);
             this.sidebar.Controls.Add(this.profile);
+            this.sidebar.Controls.Add(this.customerOrder);
             this.sidebar.Controls.Add(this.button2);
             this.sidebar.Controls.Add(this.button1);
             this.sidebar.Controls.Add(this.button3);
@@ -122,23 +122,42 @@
             this.sidebar.TabIndex = 8;
             this.sidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.sidebar_Paint);
             // 
-            // profile
-            // 
-            this.profile.Location = new System.Drawing.Point(3, 55);
-            this.profile.Name = "profile";
-            this.profile.Size = new System.Drawing.Size(232, 46);
-            this.profile.TabIndex = 9;
-            this.profile.Text = "Профил";
-            this.profile.UseVisualStyleBackColor = true;
-            // 
             // customerOrder
             // 
-            this.customerOrder.Location = new System.Drawing.Point(3, 3);
+            this.customerOrder.Location = new System.Drawing.Point(3, 55);
             this.customerOrder.Name = "customerOrder";
             this.customerOrder.Size = new System.Drawing.Size(232, 46);
             this.customerOrder.TabIndex = 10;
             this.customerOrder.Text = "Поръчки";
             this.customerOrder.UseVisualStyleBackColor = true;
+            // 
+            // profile
+            // 
+            this.profile.Location = new System.Drawing.Point(3, 3);
+            this.profile.Name = "profile";
+            this.profile.Size = new System.Drawing.Size(232, 46);
+            this.profile.TabIndex = 9;
+            this.profile.Text = "Профил";
+            this.profile.UseVisualStyleBackColor = true;
+            this.profile.Click += new System.EventHandler(this.profile_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(3, 107);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(232, 46);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Любими ресторант";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 159);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(232, 46);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Любими храни";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -158,6 +177,15 @@
             this.button4.Text = "Стани бизнес партньор";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // adminPanel
+            // 
+            this.adminPanel.Location = new System.Drawing.Point(3, 315);
+            this.adminPanel.Name = "adminPanel";
+            this.adminPanel.Size = new System.Drawing.Size(232, 46);
+            this.adminPanel.TabIndex = 15;
+            this.adminPanel.Text = "Администрация";
+            this.adminPanel.UseVisualStyleBackColor = true;
+            // 
             // sidebarTransition
             // 
             this.sidebarTransition.Interval = 10;
@@ -168,35 +196,8 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(3, 92);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(793, 358);
+            this.dataGridView2.Size = new System.Drawing.Size(793, 346);
             this.dataGridView2.TabIndex = 9;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(3, 159);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(232, 46);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Любими храни";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(3, 107);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(232, 46);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Любими ресторант";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // adminPanel
-            // 
-            this.adminPanel.Location = new System.Drawing.Point(3, 315);
-            this.adminPanel.Name = "adminPanel";
-            this.adminPanel.Size = new System.Drawing.Size(232, 46);
-            this.adminPanel.TabIndex = 15;
-            this.adminPanel.Text = "Администрация";
-            this.adminPanel.UseVisualStyleBackColor = true;
             // 
             // Restaurants
             // 

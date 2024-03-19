@@ -48,6 +48,7 @@
             this.back.TabIndex = 0;
             this.back.Text = "<--";
             this.back.UseVisualStyleBackColor = true;
+            this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // panel1
             // 
@@ -58,24 +59,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(759, 43);
             this.panel1.TabIndex = 5;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
             // Minimize
             // 
-            this.Minimize.Location = new System.Drawing.Point(56, 3);
+            this.Minimize.Location = new System.Drawing.Point(192, 2);
             this.Minimize.Name = "Minimize";
             this.Minimize.Size = new System.Drawing.Size(54, 37);
             this.Minimize.TabIndex = 2;
             this.Minimize.Text = "__";
             this.Minimize.UseVisualStyleBackColor = true;
+            this.Minimize.Click += new System.EventHandler(this.Minimize_Click);
             // 
             // Exit
             // 
-            this.Exit.Location = new System.Drawing.Point(116, 3);
+            this.Exit.Location = new System.Drawing.Point(252, 2);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(54, 37);
             this.Exit.TabIndex = 0;
             this.Exit.Text = "X";
             this.Exit.UseVisualStyleBackColor = true;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // textBox1
             // 
@@ -83,6 +88,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(264, 20);
             this.textBox1.TabIndex = 6;
+            this.textBox1.Text = "Email";
             // 
             // textBox2
             // 
@@ -90,6 +96,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(264, 20);
             this.textBox2.TabIndex = 7;
+            this.textBox2.Text = "Парола";
             // 
             // button1
             // 
@@ -97,7 +104,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(139, 27);
             this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
+            this.button1.Text = "Влез";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // label1

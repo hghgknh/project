@@ -47,7 +47,7 @@ namespace project
         private void sidebarTransition_Tick(object sender, EventArgs e)
         {
             if (sidebarExpand) {
-                sidebar.Width -= 20;
+                sidebar.Width -= 5;
                 if (sidebar.Width <= 0) {
                     sidebarExpand = false;
                     sidebarTransition.Stop();/*
@@ -58,7 +58,7 @@ namespace project
                 }
             }else
             {
-                sidebar.Width += 20;
+                sidebar.Width += 5;
                 if(sidebar.Width >= 240) {
                     sidebarExpand = true;
                     sidebarTransition.Stop();/*
@@ -83,6 +83,13 @@ namespace project
         private void Restaurants_Load(object sender, EventArgs e)
         {
             sidebar.Width = 0;
+        }
+
+        private void profile_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
         }
     }
 }
