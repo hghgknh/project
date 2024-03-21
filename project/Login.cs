@@ -52,7 +52,7 @@ namespace project
         private void back_Click(object sender, EventArgs e)
         {
             Restaurants restaurants = new Restaurants();
-            restaurants.Show();
+            //restaurants.Show();
             this.Hide();
         }
     }

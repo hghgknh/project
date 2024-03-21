@@ -50,7 +50,7 @@
             this.panel1.Controls.Add(this.Exit);
             this.panel1.Location = new System.Drawing.Point(2, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(759, 43);
+            this.panel1.Size = new System.Drawing.Size(302, 43);
             this.panel1.TabIndex = 6;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -112,7 +112,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(209, 20);
             this.textBox3.TabIndex = 10;
-            this.textBox3.Text = "Пожтори парола";
+            this.textBox3.Text = "Повтори парола";
             // 
             // textBox4
             // 
@@ -144,7 +144,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(307, 283);
             this.Controls.Add(this.registerBtn);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
