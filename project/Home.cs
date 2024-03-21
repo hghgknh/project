@@ -12,7 +12,7 @@ namespace project
 {
     public partial class Home : Form
     {
-        public string Adress;
+        //public string Adress;
         public Home()
         {
             InitializeComponent();
@@ -21,8 +21,9 @@ namespace project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Adress = textBox1.Text;
+            //Adress = textBox1.Text;
             Restaurants restaurants = new Restaurants();
+            restaurants.Data = textBox1.Text;
             restaurants.Show();
             this.Hide();
         }

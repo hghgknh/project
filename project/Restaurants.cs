@@ -12,6 +12,7 @@ namespace project
 {
     public partial class Restaurants : Form
     {
+        public string Data { get; set; }
         public Restaurants()
         {
             InitializeComponent();
@@ -90,6 +91,11 @@ namespace project
             Login login = new Login();
             login.Show();
             this.Hide();
+        }
+
+        private void customerOrder_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Data);
         }
     }
 }

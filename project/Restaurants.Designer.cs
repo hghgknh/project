@@ -36,8 +36,8 @@
             this.exit = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
-            this.customerOrder = new System.Windows.Forms.Button();
             this.profile = new System.Windows.Forms.Button();
+            this.customerOrder = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -60,8 +60,9 @@
             this.panel1.Controls.Add(this.exit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 43);
+            this.panel1.Size = new System.Drawing.Size(1067, 53);
             this.panel1.TabIndex = 5;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -69,9 +70,10 @@
             // btnMenu
             // 
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(10, 3);
+            this.btnMenu.Location = new System.Drawing.Point(13, 4);
+            this.btnMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(40, 37);
+            this.btnMenu.Size = new System.Drawing.Size(53, 46);
             this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMenu.TabIndex = 3;
             this.btnMenu.TabStop = false;
@@ -79,9 +81,10 @@
             // 
             // minimize
             // 
-            this.minimize.Location = new System.Drawing.Point(679, 3);
+            this.minimize.Location = new System.Drawing.Point(905, 4);
+            this.minimize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.minimize.Name = "minimize";
-            this.minimize.Size = new System.Drawing.Size(54, 37);
+            this.minimize.Size = new System.Drawing.Size(72, 46);
             this.minimize.TabIndex = 2;
             this.minimize.Text = "__";
             this.minimize.UseVisualStyleBackColor = true;
@@ -89,9 +92,10 @@
             // 
             // exit
             // 
-            this.exit.Location = new System.Drawing.Point(739, 3);
+            this.exit.Location = new System.Drawing.Point(985, 4);
+            this.exit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(54, 37);
+            this.exit.Size = new System.Drawing.Size(72, 46);
             this.exit.TabIndex = 0;
             this.exit.Text = "X";
             this.exit.UseVisualStyleBackColor = true;
@@ -100,9 +104,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 48);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 59);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(796, 26);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(1061, 32);
             this.dataGridView1.TabIndex = 6;
             // 
             // sidebar
@@ -116,72 +122,81 @@
             this.sidebar.Controls.Add(this.button4);
             this.sidebar.Controls.Add(this.adminPanel);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sidebar.Location = new System.Drawing.Point(0, 43);
+            this.sidebar.Location = new System.Drawing.Point(0, 53);
+            this.sidebar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(240, 407);
+            this.sidebar.Size = new System.Drawing.Size(320, 501);
             this.sidebar.TabIndex = 8;
             this.sidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.sidebar_Paint);
             // 
-            // customerOrder
-            // 
-            this.customerOrder.Location = new System.Drawing.Point(3, 55);
-            this.customerOrder.Name = "customerOrder";
-            this.customerOrder.Size = new System.Drawing.Size(232, 46);
-            this.customerOrder.TabIndex = 10;
-            this.customerOrder.Text = "Поръчки";
-            this.customerOrder.UseVisualStyleBackColor = true;
-            // 
             // profile
             // 
-            this.profile.Location = new System.Drawing.Point(3, 3);
+            this.profile.Location = new System.Drawing.Point(4, 4);
+            this.profile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.profile.Name = "profile";
-            this.profile.Size = new System.Drawing.Size(232, 46);
+            this.profile.Size = new System.Drawing.Size(309, 57);
             this.profile.TabIndex = 9;
             this.profile.Text = "Профил";
             this.profile.UseVisualStyleBackColor = true;
             this.profile.Click += new System.EventHandler(this.profile_Click);
             // 
+            // customerOrder
+            // 
+            this.customerOrder.Location = new System.Drawing.Point(4, 69);
+            this.customerOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.customerOrder.Name = "customerOrder";
+            this.customerOrder.Size = new System.Drawing.Size(309, 57);
+            this.customerOrder.TabIndex = 10;
+            this.customerOrder.Text = "Поръчки";
+            this.customerOrder.UseVisualStyleBackColor = true;
+            this.customerOrder.Click += new System.EventHandler(this.customerOrder_Click);
+            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(3, 107);
+            this.button2.Location = new System.Drawing.Point(4, 134);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(232, 46);
+            this.button2.Size = new System.Drawing.Size(309, 57);
             this.button2.TabIndex = 14;
             this.button2.Text = "Любими ресторант";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(3, 159);
+            this.button1.Location = new System.Drawing.Point(4, 199);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(232, 46);
+            this.button1.Size = new System.Drawing.Size(309, 57);
             this.button1.TabIndex = 13;
             this.button1.Text = "Любими храни";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(3, 211);
+            this.button3.Location = new System.Drawing.Point(4, 264);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(232, 46);
+            this.button3.Size = new System.Drawing.Size(309, 57);
             this.button3.TabIndex = 11;
             this.button3.Text = "Стани доставчик";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(3, 263);
+            this.button4.Location = new System.Drawing.Point(4, 329);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(232, 46);
+            this.button4.Size = new System.Drawing.Size(309, 57);
             this.button4.TabIndex = 12;
             this.button4.Text = "Стани бизнес партньор";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // adminPanel
             // 
-            this.adminPanel.Location = new System.Drawing.Point(3, 315);
+            this.adminPanel.Location = new System.Drawing.Point(4, 394);
+            this.adminPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.adminPanel.Name = "adminPanel";
-            this.adminPanel.Size = new System.Drawing.Size(232, 46);
+            this.adminPanel.Size = new System.Drawing.Size(309, 57);
             this.adminPanel.TabIndex = 15;
             this.adminPanel.Text = "Администрация";
             this.adminPanel.UseVisualStyleBackColor = true;
@@ -194,21 +209,24 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 92);
+            this.dataGridView2.Location = new System.Drawing.Point(4, 113);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(793, 346);
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.Size = new System.Drawing.Size(1057, 426);
             this.dataGridView2.TabIndex = 9;
             // 
             // Restaurants
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Restaurants";
             this.Text = "Restaurants";
             this.Load += new System.EventHandler(this.Restaurants_Load);
