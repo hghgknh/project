@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Principal;
 
 namespace project
 {
@@ -31,8 +32,7 @@ namespace project
         {
             try
             {
-                connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"" + Path.GetFullPath(Directory.GetCurrentDirectory() + "\\..\\..\\Database1.mdf") + "\";Integrated Security=True";
-                //connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=Database1_OLD;Persist Security Info=True;User ID=nmb; Password=nos";
+                connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"D:\\visual studio\\project\\project\\Database1.mdf\";Integrated Security=True";
                 connection = new SqlConnection(connectionString);
                 connection.Open();
             }
@@ -61,5 +61,234 @@ namespace project
             adapter.Dispose();
             return table;
         }*/
+        public bool InsertAcc(Account account)
+        {
+            SqlCommand cmd = new SqlCommand("Insert into Account VALUES(" +
+            "@name,@password,@email,@location,@phone_num,@type)", connection);
+            cmd.Parameters.AddWithValue("@name", account.Name);
+            cmd.Parameters.AddWithValue("@password", account.Password);
+            cmd.Parameters.AddWithValue("@email", account.Email);
+            cmd.Parameters.AddWithValue("@location", account.Location);
+            cmd.Parameters.AddWithValue("@phone_num", account.Phone_num);
+            cmd.Parameters.AddWithValue("@type", account.Type);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+        }
+        public bool SearchForName(string x)
+        {
+            SqlCommand cmd = new SqlCommand("Select name FROM Account WHERE name=@name", connection);
+            cmd.Parameters.AddWithValue("@name", x);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            adapter.Dispose();
+            if (table != null) return true;
+            else return false;
+        }
+        public bool SelectAccExist(string x, string y)
+        {
+            SqlCommand cmd = new SqlCommand("Select name FROM Account WHERE name=@name, password = @assword", connection);
+            cmd.Parameters.AddWithValue("@name", x);
+            cmd.Parameters.AddWithValue("@password", y);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            adapter.Dispose();
+            if (table != null) return true;
+            else return false;
+        }
+        public bool SelectAcc(Account account)
+        {
+            SqlCommand cmd = new SqlCommand("Select * FROM Account WHERE Id = @id", connection);
+            cmd.Parameters.AddWithValue("@id", account.Id);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            adapter.Dispose();
+            if (table != null) return true;
+            else return false;
+        }
+        public string SelectAccTypeById(int a)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT type FROM Account WHERE Id = @username", connection);
+            cmd.Parameters.AddWithValue("@username", a);
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            adapter.Dispose();
+            //Account account = new Account();
+            if (table.Rows.Count > 0)
+            {
+                return table.Rows[0]["type"].ToString();
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public int SelectAccIdByUsername(string username)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT Id FROM Account WHERE name = @username", connection);
+            cmd.Parameters.AddWithValue("@username", username);
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            adapter.Dispose();
+            //Account account = new Account();
+            if (table.Rows.Count > 0)
+            {
+                return int.Parse(table.Rows[0]["Id"].ToString());
+            }
+            else { return 0; }
+        }
+
+        public bool DeleteAcc(int a)
+        {
+            SqlCommand cmd = new SqlCommand("DELETE FROM Account WHERE Id = @id", connection);
+            cmd.Parameters.AddWithValue("@id", a);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }/*
+        public int Select_string1(string a, string b, string x, string y)
+        {
+            SqlCommand cmd = new SqlCommand($"SELECT {a} FROM {b} WHERE {x} = {y}", connection);
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            adapter.Dispose();
+            //Account account = new Account();
+            if (table.Rows.Count > 0)
+            {
+                return int.Parse(table.Rows[0]["Id"].ToString());
+            }
+            else { return 0; }
+        }*/
+
+        public bool UpdateAccLocation(int id, string location)
+        {
+            SqlCommand cmd = new SqlCommand("UPDATE Account SET location = @Location WHERE Id = @id", connection);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@Location", location);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public DataTable SelectPerAcc(int x)
+        {
+            SqlCommand cmd = new SqlCommand("Select * FROM Account WHERE Id = @id", connection);
+            cmd.Parameters.AddWithValue("@id", x);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            adapter.Dispose();
+            Account acc = new Account();
+            acc.Id = int.Parse(table.Rows[0]["id"].ToString());
+            acc.Name = table.Rows[0]["name"].ToString();
+            acc.Password = table.Rows[0]["password"].ToString();
+            acc.Email = table.Rows[0]["email"].ToString();
+            acc.Location = table.Rows[0]["location"].ToString();
+            return table;
+        }
+        public int SelectCount(string a)
+        {
+            SqlCommand cmd = new SqlCommand($"Select Count(*) From Restaurant", connection);
+            //cmd.Parameters.AddWithValue("@id", x);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            adapter.Dispose();
+            int x = Convert.ToInt32(cmd.ExecuteScalar());
+            return x;
+        }
+        public DataTable SelectCountid_Restaurants(int y, int z)
+        {
+            SqlCommand cmd = new SqlCommand($"Select * From Restaurant Order by Id Offset {y} Limit {z}", connection);
+            //cmd.Parameters.AddWithValue("@id", x);     int x,
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            adapter.Dispose();
+            Restaurant restaurant = new Restaurant();
+            restaurant.Id = int.Parse(table.Rows[0]["id"].ToString());
+            restaurant.Restaurant_img = table.Rows[0]["restaurant_img"].ToString();
+            restaurant.Restaurant_name = table.Rows[0]["restaurant_name"].ToString();
+            return table;
+        }
+        public bool InsertProducts(Products products)
+        {
+            SqlCommand cmd = new SqlCommand("Insert into Products VALUES(" +
+            "@food_id,@product)", connection);
+            cmd.Parameters.AddWithValue("@food_id", products.Food_id);
+            cmd.Parameters.AddWithValue("@product", products.Product);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public DataTable SelectRestaurantFood(int a)
+        {
+            SqlCommand cmd = new SqlCommand($"SELECT Restaurant.restarant_name,Food.food_name,Food.food_price\r\n" +
+            $"FROM Restaurant_Food INNER JOIN Food ON Restaurant_food.food_id = Food.Id\r\n" +
+            $"WHERE Restaurant_Food.restaurant_id = {a};", connection);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            adapter.Dispose();
+            if (table != null) return table;
+            else return null;
+        }
+        public DataTable SelectProducts(int x)
+        {
+            SqlCommand cmd = new SqlCommand("Select * From Products Where food_id = @id", connection);
+            cmd.Parameters.AddWithValue("@id", x);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            adapter.Dispose();
+            return table;
+        }
+        public DataTable SelectIdFromProduct(int x)
+        {
+            SqlCommand cmd = new SqlCommand("Select * From Food Where Id = @id", connection);
+            cmd.Parameters.AddWithValue("@id", x);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            adapter.Dispose();
+            return table;
+        }
+
     }
 }

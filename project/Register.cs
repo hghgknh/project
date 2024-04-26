@@ -12,6 +12,9 @@ namespace project
 {
     public partial class Register : Form
     {
+        public string LocationDel {  get; set; }
+        //public int Id { get; set; }
+        //public bool Loggedin { get; set; }
         public Register()
         {
             InitializeComponent();
@@ -44,8 +47,52 @@ namespace project
         private void back_Click(object sender, EventArgs e)
         {
             Login login = new Login();
+            login.Loggedin = false;
+            login.LocationDel = this.LocationDel;
             login.Show();
             this.Hide();
+        }
+
+        private void registerBtn_Click(object sender, EventArgs e)
+        {
+            DbManager db = new DbManager();
+            Account account = new Account();
+            if (db.SearchForName(textBox1.Text))
+            {
+                account.Name = textBox1.Text;
+            }
+            else
+            {
+                MessageBox.Show("tuk ne vliza?", "aaaaaa Exit", MessageBoxButtons.OK);
+                account.Name = null;
+            }
+            if (textBox2.Text == textBox3.Text)
+            {
+                account.Password = textBox2.Text;
+            }
+            else
+            {
+                MessageBox.Show("Are you sure you want to exit?", "bbbbbb Exit", MessageBoxButtons.OK);
+                account.Password = null;
+            }
+            account.Email = textBox4.Text;
+            account.Location = textBox5.Text;
+            account.Phone_num = textBox6.Text;
+            account.Type = "customer";
+            if (account.Name != null && account.Password != null && account.Email != null && account.Location != null)
+            {
+                db.InsertAcc(account);
+                Login login = new Login();
+                login.Loggedin = false;
+                login.LocationDel = this.LocationDel;
+                login.Show();
+                this.Hide();
+            }
+        }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+            textBox5.Text = this.LocationDel;
         }
     }
 }

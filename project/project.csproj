@@ -61,18 +61,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DbManager.cs" />
-    <Compile Include="Home.cs">
+    <Compile Include="Account.cs" />
+    <Compile Include="AddMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Home.Designer.cs">
-      <DependentUpon>Home.cs</DependentUpon>
+    <Compile Include="AddMenu.Designer.cs">
+      <DependentUpon>AddMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplyDos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplyDos.Designer.cs">
+      <DependentUpon>ApplyDos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DbManager.cs" />
+    <Compile Include="Location.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location.Designer.cs">
+      <DependentUpon>Location.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplyPar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplyPar.Designer.cs">
+      <DependentUpon>ApplyPar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Products.cs" />
+    <Compile Include="Produkti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produkti.Designer.cs">
+      <DependentUpon>Produkti.cs</DependentUpon>
     </Compile>
     <Compile Include="Profile.cs">
       <SubType>Form</SubType>
@@ -88,17 +114,42 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="Restaurants.cs">
+    <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Restaurants.Designer.cs">
-      <DependentUpon>Restaurants.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Home.resx">
+    <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant.cs" />
+    <Compile Include="Resturant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resturant.Designer.cs">
+      <DependentUpon>Resturant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResturantHrana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResturantHrana.Designer.cs">
+      <DependentUpon>ResturantHrana.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddMenu.resx">
+      <DependentUpon>AddMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplyDos.resx">
+      <DependentUpon>ApplyDos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location.resx">
+      <DependentUpon>Location.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplyPar.resx">
+      <DependentUpon>ApplyPar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produkti.resx">
+      <DependentUpon>Produkti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
@@ -111,12 +162,19 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Restaurants.resx">
-      <DependentUpon>Restaurants.cs</DependentUpon>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resturant.resx">
+      <DependentUpon>Resturant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResturantHrana.resx">
+      <DependentUpon>ResturantHrana.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -139,6 +197,50 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\water.png" />
+    <None Include="Resources\verified.png" />
+    <None Include="Resources\upload.png" />
+    <None Include="Resources\upload %282%29.png" />
+    <None Include="Resources\upload %281%29.png" />
+    <None Include="Resources\star.png" />
+    <None Include="Resources\star %281%29.png" />
+    <None Include="Resources\spaghetti.png" />
+    <None Include="Resources\Shapur-branded-restaurant-front-2.jpg" />
+    <None Include="Resources\salad.png" />
+    <None Include="Resources\remove.png" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\pizza.png" />
+    <None Include="Resources\pizza %284%29.png" />
+    <None Include="Resources\pizza %283%29.png" />
+    <None Include="Resources\pizza %282%29.png" />
+    <None Include="Resources\pizza %281%29.png" />
+    <None Include="Resources\minus.png" />
+    <None Include="Resources\lobster.png" />
+    <None Include="Resources\fb78c539dea435e436d12f9700c31790.jpg" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\delete %281%29.png" />
+    <None Include="Resources\cross.png" />
+    <None Include="Resources\confirmation.png" />
+    <None Include="Resources\confirmation %281%29.png" />
+    <None Include="Resources\confirm.png" />
+    <None Include="Resources\classic-cheese-pizza-recipe-2-64429a0cb408b.jpg" />
+    <None Include="Resources\christmas-dinner.png" />
+    <None Include="Resources\burger.png" />
+    <None Include="Resources\bottle.png" />
+    <None Include="Resources\besthomemadepizzahero.jpg" />
+    <None Include="Resources\back-button.png" />
+    <None Include="Resources\2652401_QFSSL_SupremePizza_00072-d910a935ba7d448e8c7545a963ed7101.jpg" />
+    <None Include="Resources\6776_Pizza-Dough_ddmfs_2x1_1725-fdaa76496da045b3bdaadcec6d4c53982.jpg" />
+    <None Include="Resources\6776_Pizza-Dough_ddmfs_2x1_1725-fdaa76496da045b3bdaadcec6d4c53981.jpg" />
+    <None Include="Resources\6776_Pizza-Dough_ddmfs_2x1_1725-fdaa76496da045b3bdaadcec6d4c5398.jpg" />
+    <None Include="Resources\360_F_249582332_DcR8e5IHqgB32U7AjdBqbjMhhSfkBcaE.jpg" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\right-arrow_3849889.png" />
+    <None Include="Resources\restaurant1.png" />
+    <None Include="Resources\restaurant.png" />
+    <None Include="Resources\menu.png" />
+    <None Include="Resources\back.png" />
+    <None Include="Resources\arrow-left_8591555.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

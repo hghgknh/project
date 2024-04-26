@@ -29,98 +29,354 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Minimize = new System.Windows.Forms.Button();
-            this.back = new System.Windows.Forms.Button();
-            this.Exit = new System.Windows.Forms.Button();
+            this.Profil = new System.Windows.Forms.Label();
+            this.minbtn = new System.Windows.Forms.Button();
+            this.closebtn = new System.Windows.Forms.Button();
+            this.backbtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.Minimize);
-            this.panel1.Controls.Add(this.back);
-            this.panel1.Controls.Add(this.Exit);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.BackColor = System.Drawing.Color.SlateBlue;
+            this.panel1.Controls.Add(this.Profil);
+            this.panel1.Controls.Add(this.minbtn);
+            this.panel1.Controls.Add(this.closebtn);
+            this.panel1.Controls.Add(this.backbtn);
+            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(297, 43);
-            this.panel1.TabIndex = 7;
+            this.panel1.Size = new System.Drawing.Size(1157, 59);
+            this.panel1.TabIndex = 1;
             // 
-            // Minimize
+            // Profil
             // 
-            this.Minimize.Location = new System.Drawing.Point(168, 3);
-            this.Minimize.Name = "Minimize";
-            this.Minimize.Size = new System.Drawing.Size(54, 37);
-            this.Minimize.TabIndex = 2;
-            this.Minimize.Text = "__";
-            this.Minimize.UseVisualStyleBackColor = true;
+            this.Profil.AutoSize = true;
+            this.Profil.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Profil.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Profil.Location = new System.Drawing.Point(484, 11);
+            this.Profil.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Profil.Name = "Profil";
+            this.Profil.Size = new System.Drawing.Size(122, 31);
+            this.Profil.TabIndex = 3;
+            this.Profil.Text = "Профил";
             // 
-            // back
+            // minbtn
             // 
-            this.back.Location = new System.Drawing.Point(3, 3);
-            this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(39, 35);
-            this.back.TabIndex = 0;
-            this.back.Text = "<--";
-            this.back.UseVisualStyleBackColor = true;
+            this.minbtn.BackColor = System.Drawing.Color.SlateBlue;
+            this.minbtn.FlatAppearance.BorderSize = 0;
+            this.minbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minbtn.Image = global::project.Properties.Resources.remove;
+            this.minbtn.Location = new System.Drawing.Point(1039, 9);
+            this.minbtn.Margin = new System.Windows.Forms.Padding(4);
+            this.minbtn.Name = "minbtn";
+            this.minbtn.Size = new System.Drawing.Size(55, 42);
+            this.minbtn.TabIndex = 2;
+            this.minbtn.UseVisualStyleBackColor = false;
             // 
-            // Exit
+            // closebtn
             // 
-            this.Exit.Location = new System.Drawing.Point(228, 3);
-            this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(54, 37);
-            this.Exit.TabIndex = 0;
-            this.Exit.Text = "X";
-            this.Exit.UseVisualStyleBackColor = true;
+            this.closebtn.BackColor = System.Drawing.Color.SlateBlue;
+            this.closebtn.FlatAppearance.BorderSize = 0;
+            this.closebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closebtn.Image = global::project.Properties.Resources.cross;
+            this.closebtn.Location = new System.Drawing.Point(1089, 7);
+            this.closebtn.Margin = new System.Windows.Forms.Padding(4);
+            this.closebtn.Name = "closebtn";
+            this.closebtn.Size = new System.Drawing.Size(64, 46);
+            this.closebtn.TabIndex = 1;
+            this.closebtn.UseVisualStyleBackColor = false;
+            // 
+            // backbtn
+            // 
+            this.backbtn.FlatAppearance.BorderSize = 0;
+            this.backbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backbtn.Image = global::project.Properties.Resources.back_button;
+            this.backbtn.Location = new System.Drawing.Point(4, 4);
+            this.backbtn.Margin = new System.Windows.Forms.Padding(4);
+            this.backbtn.Name = "backbtn";
+            this.backbtn.Size = new System.Drawing.Size(51, 46);
+            this.backbtn.TabIndex = 0;
+            this.backbtn.UseVisualStyleBackColor = true;
+            this.backbtn.Click += new System.EventHandler(this.backbtn_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(4, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 26);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Име";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(4, 10);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(102, 26);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Парола ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(3, 7);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 26);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Ймеил";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(3, 9);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 26);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Адрес";
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(71, 81);
+            this.panel2.BackColor = System.Drawing.Color.SlateBlue;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(1, 58);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(635, 264);
-            this.panel2.TabIndex = 8;
+            this.panel2.Size = new System.Drawing.Size(115, 121);
+            this.panel2.TabIndex = 6;
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(71, 81);
+            this.panel3.BackColor = System.Drawing.Color.SlateBlue;
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Location = new System.Drawing.Point(1, 197);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(635, 264);
-            this.panel3.TabIndex = 9;
+            this.panel3.Size = new System.Drawing.Size(113, 121);
+            this.panel3.TabIndex = 7;
             // 
             // panel4
             // 
-            this.panel4.Location = new System.Drawing.Point(71, 81);
+            this.panel4.BackColor = System.Drawing.Color.SlateBlue;
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Location = new System.Drawing.Point(1, 335);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(635, 264);
-            this.panel4.TabIndex = 9;
+            this.panel4.Size = new System.Drawing.Size(116, 121);
+            this.panel4.TabIndex = 8;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.SlateBlue;
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Location = new System.Drawing.Point(1, 464);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(115, 137);
+            this.panel5.TabIndex = 9;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.SlateBlue;
+            this.panel6.Location = new System.Drawing.Point(1, 176);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(977, 27);
+            this.panel6.TabIndex = 10;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.SlateBlue;
+            this.panel7.Location = new System.Drawing.Point(1, 311);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(977, 27);
+            this.panel7.TabIndex = 11;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.SlateBlue;
+            this.panel8.Location = new System.Drawing.Point(1, 452);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(977, 23);
+            this.panel8.TabIndex = 12;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.SlateBlue;
+            this.panel9.Location = new System.Drawing.Point(1, 593);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(977, 21);
+            this.panel9.TabIndex = 13;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.SlateBlue;
+            this.panel10.Controls.Add(this.button1);
+            this.panel10.Location = new System.Drawing.Point(977, 58);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(181, 555);
+            this.panel10.TabIndex = 18;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::project.Properties.Resources.refresh;
+            this.button1.Location = new System.Drawing.Point(23, 219);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(133, 97);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(111, 58);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(867, 120);
+            this.textBox1.TabIndex = 1;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(111, 197);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(867, 120);
+            this.textBox2.TabIndex = 19;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(111, 335);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(867, 120);
+            this.textBox3.TabIndex = 20;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(111, 476);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(867, 120);
+            this.textBox4.TabIndex = 21;
             // 
             // Profile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(823, 407);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
+            this.BackColor = System.Drawing.Color.Lavender;
+            this.ClientSize = new System.Drawing.Size(1161, 620);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel10);
+            this.Controls.Add(this.panel9);
+            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Profile";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Profile";
+            this.Load += new System.EventHandler(this.Profile_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button Minimize;
-        private System.Windows.Forms.Button back;
-        private System.Windows.Forms.Button Exit;
+        private System.Windows.Forms.Button minbtn;
+        private System.Windows.Forms.Button closebtn;
+        private System.Windows.Forms.Button backbtn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label Profil;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button button1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }
