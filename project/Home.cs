@@ -20,7 +20,8 @@ namespace project
             InitializeComponent();
         }
         Point lastPoint;
-        bool menuExpand = false;
+        //bool menuExpand = false;
+        //bool panelExpand = false;
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -47,35 +48,35 @@ namespace project
         }
 
         bool sidebarExpand = true;
+
+        bool panelExpand = true;
+        bool panel1Expand = true;
         private void sidebarTransition_Tick(object sender, EventArgs e)
         {
             if (sidebarExpand) {
                 sidebar.Width -= 10;
                 if (sidebar.Width <= 0) {
                     sidebarExpand = false;
-                    sidebarTransition.Stop();/*
-                    button1.Width = sidebar.Width;
-                    button2.Width = sidebar.Width;
-                    button3.Width = sidebar.Width;
-                    button4.Width = sidebar.Width;*/
+                    sidebarTransition.Stop();
+
                 }
             }else
             {
-                sidebar.Width += 10;
+                sidebar.Width += 1;
                 if(sidebar.Width >= 240) {
                     sidebarExpand = true;
-                    sidebarTransition.Stop();/*
-                    button1.Width = sidebar.Width;
-                    button2.Width = sidebar.Width;
-                    button3.Width = sidebar.Width;
-                    button4.Width = sidebar.Width;*/
+                    sidebarTransition.Stop();
+
                 }
             }
+            
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
             sidebarTransition.Start();
+            //buttonTransition.Start();
+            //button1Transition.Start();
         }
 
         private void sidebar_Paint(object sender, PaintEventArgs e)
@@ -98,6 +99,8 @@ namespace project
 
             }*/
             //pictureBox1.Image = 
+            button1.Visible = false;
+            button2.Visible = false;
         }
 
         private void profile_Click(object sender, EventArgs e)
@@ -115,6 +118,8 @@ namespace project
             {
                 Profile profile = new Profile();
                 profile.Id = this.Id;
+                profile.Show();
+                this.Close();
             }
         }
 
@@ -155,6 +160,14 @@ namespace project
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Resturant resturant = new Resturant();
+            resturant.Id = this.Id;
+            resturant.Loggedin = this.Loggedin;
+            resturant.LocationDel = this.LocationDel;
         }
     }
 }

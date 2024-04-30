@@ -59,14 +59,15 @@
             this.panel1.Controls.Add(this.Exit);
             this.panel1.Location = new System.Drawing.Point(4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(424, 53);
+            this.panel1.Size = new System.Drawing.Size(379, 53);
             this.panel1.TabIndex = 5;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
             // Minimize
             // 
-            this.Minimize.Location = new System.Drawing.Point(192, 2);
+            this.Minimize.BackColor = System.Drawing.Color.Lavender;
+            this.Minimize.Location = new System.Drawing.Point(226, 4);
             this.Minimize.Name = "Minimize";
             this.Minimize.Size = new System.Drawing.Size(72, 46);
             this.Minimize.TabIndex = 2;
@@ -76,7 +77,8 @@
             // 
             // Exit
             // 
-            this.Exit.Location = new System.Drawing.Point(252, 2);
+            this.Exit.BackColor = System.Drawing.Color.Lavender;
+            this.Exit.Location = new System.Drawing.Point(304, 4);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(72, 46);
             this.Exit.TabIndex = 0;
@@ -107,6 +109,7 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Lavender;
             this.button1.Location = new System.Drawing.Point(79, 175);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(185, 33);
@@ -127,9 +130,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(137, 250);
+            this.label2.Location = new System.Drawing.Point(159, 250);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 13);
+            this.label2.Size = new System.Drawing.Size(87, 16);
             this.label2.TabIndex = 10;
             this.label2.Text = "цъкнете тук";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -138,8 +141,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ClientSize = new System.Drawing.Size(336, 294);
+            this.BackColor = System.Drawing.Color.SlateBlue;
+            this.ClientSize = new System.Drawing.Size(387, 294);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);

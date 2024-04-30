@@ -51,8 +51,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.napredMenu = new System.Windows.Forms.Button();
             this.nazadUser = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -98,9 +96,9 @@
             this.pnlzabackbtn.Controls.Add(this.Kandidatura);
             this.pnlzabackbtn.Controls.Add(this.button1);
             this.pnlzabackbtn.Controls.Add(this.btnback);
-            this.pnlzabackbtn.Location = new System.Drawing.Point(4, 3);
+            this.pnlzabackbtn.Location = new System.Drawing.Point(0, 0);
             this.pnlzabackbtn.Name = "pnlzabackbtn";
-            this.pnlzabackbtn.Size = new System.Drawing.Size(876, 61);
+            this.pnlzabackbtn.Size = new System.Drawing.Size(880, 60);
             this.pnlzabackbtn.TabIndex = 0;
             this.pnlzabackbtn.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlzabackbtn_Paint);
             // 
@@ -116,6 +114,7 @@
             this.button2.Size = new System.Drawing.Size(55, 53);
             this.button2.TabIndex = 2;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -124,11 +123,12 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.SlateBlue;
             this.button1.Image = global::project.Properties.Resources.cross;
-            this.button1.Location = new System.Drawing.Point(816, -3);
+            this.button1.Location = new System.Drawing.Point(816, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 61);
+            this.button1.Size = new System.Drawing.Size(55, 55);
             this.button1.TabIndex = 1;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnback
             // 
@@ -280,8 +280,6 @@
             this.pnlUser.Controls.Add(this.button5);
             this.pnlUser.Controls.Add(this.napredMenu);
             this.pnlUser.Controls.Add(this.nazadUser);
-            this.pnlUser.Controls.Add(this.button4);
-            this.pnlUser.Controls.Add(this.button3);
             this.pnlUser.Controls.Add(this.panel1);
             this.pnlUser.Controls.Add(this.textBox2);
             this.pnlUser.Controls.Add(this.textBox1);
@@ -289,9 +287,9 @@
             this.pnlUser.Controls.Add(this.label11);
             this.pnlUser.Controls.Add(this.btnsnimkiRest);
             this.pnlUser.Controls.Add(this.label8);
-            this.pnlUser.Location = new System.Drawing.Point(8, 58);
+            this.pnlUser.Location = new System.Drawing.Point(2, 58);
             this.pnlUser.Name = "pnlUser";
-            this.pnlUser.Size = new System.Drawing.Size(872, 481);
+            this.pnlUser.Size = new System.Drawing.Size(878, 481);
             this.pnlUser.TabIndex = 5;
             // 
             // button6
@@ -317,6 +315,7 @@
             this.button5.TabIndex = 24;
             this.button5.Text = "Потвърди";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // napredMenu
             // 
@@ -339,30 +338,6 @@
             this.nazadUser.Size = new System.Drawing.Size(57, 51);
             this.nazadUser.TabIndex = 9;
             this.nazadUser.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Lavender;
-            this.button4.Font = new System.Drawing.Font("Microsoft YaHei Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(31, 277);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(253, 99);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Прати тук\r\n\r\n\r\n\r\n";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Lavender;
-            this.button3.Font = new System.Drawing.Font("Microsoft YaHei Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(31, 156);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(253, 99);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Прати тук\r\n\r\n\r\n\r\n";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -414,11 +389,12 @@
             this.btnsnimkiRest.Font = new System.Drawing.Font("Microsoft YaHei Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsnimkiRest.Location = new System.Drawing.Point(31, 34);
             this.btnsnimkiRest.Name = "btnsnimkiRest";
-            this.btnsnimkiRest.Size = new System.Drawing.Size(253, 99);
+            this.btnsnimkiRest.Size = new System.Drawing.Size(253, 357);
             this.btnsnimkiRest.TabIndex = 1;
             this.btnsnimkiRest.Text = "Прати тук\r\n\r\n\r\n\r\n";
             this.btnsnimkiRest.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnsnimkiRest.UseVisualStyleBackColor = false;
+            this.btnsnimkiRest.Click += new System.EventHandler(this.btnsnimkiRest_Click);
             // 
             // label8
             // 
@@ -617,8 +593,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button napredMenu;
         private System.Windows.Forms.Button nazadUser;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;

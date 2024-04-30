@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Principal;
+using System.Xml.Linq;
 
 namespace project
 {
@@ -96,15 +97,11 @@ namespace project
         }
         public bool SelectAccExist(string x, string y)
         {
-            SqlCommand cmd = new SqlCommand("Select name FROM Account WHERE name=@name, password = @assword", connection);
+            SqlCommand cmd = new SqlCommand("Select COUNT(*) FROM Account WHERE name=@name AND password = @password", connection);
             cmd.Parameters.AddWithValue("@name", x);
             cmd.Parameters.AddWithValue("@password", y);
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            adapter.Dispose();
-            if (table != null) return true;
-            else return false;
+            int count = (int)cmd.ExecuteScalar();
+            return count > 0;
         }
         public bool SelectAcc(Account account)
         {
@@ -199,7 +196,7 @@ namespace project
                 return false;
             }
         }
-        public DataTable SelectPerAcc(int x)
+        public Account SelectPerAcc(int x)
         {
             SqlCommand cmd = new SqlCommand("Select * FROM Account WHERE Id = @id", connection);
             cmd.Parameters.AddWithValue("@id", x);
@@ -213,7 +210,9 @@ namespace project
             acc.Password = table.Rows[0]["password"].ToString();
             acc.Email = table.Rows[0]["email"].ToString();
             acc.Location = table.Rows[0]["location"].ToString();
-            return table;
+            //acc.Phone_num = table.Rows[0]["phone_num"].ToString();
+            //acc.Type = table.Rows[0]["type"].ToString();
+            return acc;
         }
         public int SelectCount(string a)
         {
@@ -289,6 +288,42 @@ namespace project
             adapter.Dispose();
             return table;
         }
+        public bool UpdateAcc(Account account)
+        {
+            SqlCommand cmd = new SqlCommand("UPDATE Account SET name = @name, password = @password, email = @email, location = @location WHERE Id = @id", connection);
+            cmd.Parameters.AddWithValue("@id", account.Id);
+            cmd.Parameters.AddWithValue("@name", account.Name);
+            cmd.Parameters.AddWithValue("@password", account.Password);
+            cmd.Parameters.AddWithValue("@email", account.Email);
+            cmd.Parameters.AddWithValue("@Location", account.Location);
 
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public bool InsertImage(string x, string a, string b)
+        {
+            SqlCommand cmd = new SqlCommand("INSERT INTO Restaurant VALUES ("+
+                "@image, @restaurant_name)", connection);
+            cmd.Parameters.AddWithValue("@image", File.ReadAllBytes($"{x}"));
+            cmd.Parameters.AddWithValue("@restaurant_name", a);
+            cmd.Parameters.AddWithValue("@restaurant_location", b);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

@@ -72,6 +72,8 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1157, 59);
             this.panel1.TabIndex = 1;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
             // Profil
             // 
@@ -84,6 +86,8 @@
             this.Profil.Size = new System.Drawing.Size(122, 31);
             this.Profil.TabIndex = 3;
             this.Profil.Text = "Профил";
+            this.Profil.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Profil_MouseDown);
+            this.Profil.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Profil_MouseMove);
             // 
             // minbtn
             // 
@@ -91,12 +95,13 @@
             this.minbtn.FlatAppearance.BorderSize = 0;
             this.minbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minbtn.Image = global::project.Properties.Resources.remove;
-            this.minbtn.Location = new System.Drawing.Point(1039, 9);
+            this.minbtn.Location = new System.Drawing.Point(1026, 9);
             this.minbtn.Margin = new System.Windows.Forms.Padding(4);
             this.minbtn.Name = "minbtn";
             this.minbtn.Size = new System.Drawing.Size(55, 42);
             this.minbtn.TabIndex = 2;
             this.minbtn.UseVisualStyleBackColor = false;
+            this.minbtn.Click += new System.EventHandler(this.minbtn_Click);
             // 
             // closebtn
             // 
@@ -110,6 +115,7 @@
             this.closebtn.Size = new System.Drawing.Size(64, 46);
             this.closebtn.TabIndex = 1;
             this.closebtn.UseVisualStyleBackColor = false;
+            this.closebtn.Click += new System.EventHandler(this.closebtn_Click);
             // 
             // backbtn
             // 
@@ -129,7 +135,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(4, 0);
+            this.label1.Location = new System.Drawing.Point(4, 6);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 26);
@@ -208,10 +214,10 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.SlateBlue;
             this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(1, 464);
+            this.panel5.Location = new System.Drawing.Point(1, 473);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(115, 137);
+            this.panel5.Size = new System.Drawing.Size(115, 120);
             this.panel5.TabIndex = 9;
             // 
             // panel6
@@ -259,6 +265,7 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(181, 555);
             this.panel10.TabIndex = 18;
+            this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
             // 
             // button1
             // 
@@ -272,6 +279,7 @@
             this.button1.Size = new System.Drawing.Size(133, 97);
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
@@ -303,7 +311,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(111, 476);
+            this.textBox4.Location = new System.Drawing.Point(111, 473);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";

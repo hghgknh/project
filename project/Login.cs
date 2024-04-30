@@ -98,6 +98,7 @@ namespace project
 
         private void textBox2_Leave(object sender, EventArgs e)
         {
+            if (hasBeenClicked && textBox1.Text == "")
             {
                 TextBox box = sender as TextBox;
                 box.Text = "Парола";

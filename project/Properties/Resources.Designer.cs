@@ -73,16 +73,6 @@ namespace project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _360_F_249582332_DcR8e5IHqgB32U7AjdBqbjMhhSfkBcaE {
-            get {
-                object obj = ResourceManager.GetObject("_360_F_249582332_DcR8e5IHqgB32U7AjdBqbjMhhSfkBcaE", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _6776_Pizza_Dough_ddmfs_2x1_1725_fdaa76496da045b3bdaadcec6d4c5398 {
             get {
                 object obj = ResourceManager.GetObject("_6776_Pizza_Dough_ddmfs_2x1_1725_fdaa76496da045b3bdaadcec6d4c5398", resourceCulture);

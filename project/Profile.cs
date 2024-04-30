@@ -17,6 +17,7 @@ namespace project
         {
             InitializeComponent();
         }
+        Point lastPoint;
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -49,8 +50,71 @@ namespace project
 
         private void Profile_Load(object sender, EventArgs e)
         {
+            Account account = new Account();
             DbManager db = new DbManager();
-            db.SelectPerAcc(Id);
+            db.SelectPerAcc(this.Id);
+            textBox1.Text = account.Name;
+            textBox2.Text = account.Password;
+            textBox3.Text = account.Email;
+            textBox4.Text = account.Location;
+        }
+
+        private void panel10_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void minbtn_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void closebtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DbManager db = new DbManager();
+            Account account = new Account();
+            account.Name = textBox1.Text;
+            account.Password = textBox2.Text;
+            account.Email = textBox3.Text;
+            account.Location = textBox4.Text;
+            if(db.UpdateAcc(account))
+            {
+                MessageBox.Show("Akaunta e udejtnat", "Update complete", MessageBoxButtons.OK);
+
+            }
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
+        }
+
+        private void Profil_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
+        }
+
+        private void Profil_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
         }
     }
 }
