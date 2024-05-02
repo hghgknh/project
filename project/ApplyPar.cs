@@ -64,9 +64,14 @@ namespace project
             if (!string.IsNullOrEmpty(openFile.FileName))
             {
                 img_path = openFile.FileName;
+                MessageBox.Show("nekaf tihekst", $"durugutu tihekst s oshte neshtu {img_path}", MessageBoxButtons.OK);
+                using (Stream s = File.Open(img_path, FileMode.Create))
+                {
+                    btnsnimkiRest.Image.Save(s, System.Drawing.Imaging.ImageFormat.MemoryBmp);
+                }
             }
             else img_path = string.Empty;
-
+            /*
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "IMG files (*.img)|*.img"; // set the file filter to.img files
             saveFileDialog1.DefaultExt = "img"; // set the default file extension to.img
@@ -75,9 +80,9 @@ namespace project
             {
                 using (Stream s = File.Open(saveFileDialog1.FileName, FileMode.CreateNew))
                 {
-                    pictureBox1.Image.Save(s, System.Drawing.Imaging.ImageFormat.MemoryBmp);
+                    btnsnimkiRest.Image.Save(s, System.Drawing.Imaging.ImageFormat.MemoryBmp);
                 }
-            }
+            }*/
         }
 
         private void button5_Click(object sender, EventArgs e)
