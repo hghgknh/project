@@ -95,6 +95,12 @@
     <Compile Include="ApplyPar.Designer.cs">
       <DependentUpon>ApplyPar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Poruchki.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     <EmbeddedResource Include="ApplyPar.resx">
       <DependentUpon>ApplyPar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Poruchki.resx">
       <DependentUpon>Poruchki.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,6 +217,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\payment-method.png" />
+    <None Include="Resources\debit-card.png" />
     <None Include="Resources\checked.png" />
     <None Include="Resources\water.png" />
     <None Include="Resources\verified.png" />
