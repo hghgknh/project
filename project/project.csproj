@@ -95,6 +95,12 @@
     <Compile Include="ApplyPar.Designer.cs">
       <DependentUpon>ApplyPar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Poruchki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Poruchki.Designer.cs">
+      <DependentUpon>Poruchki.cs</DependentUpon>
+    </Compile>
     <Compile Include="Products.cs" />
     <Compile Include="Produkti.cs">
       <SubType>Form</SubType>
@@ -150,6 +156,9 @@
     <EmbeddedResource Include="ApplyPar.resx">
       <DependentUpon>ApplyPar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Poruchki.resx">
+      <DependentUpon>Poruchki.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Produkti.resx">
       <DependentUpon>Produkti.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +208,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\checked.png" />
     <None Include="Resources\water.png" />
     <None Include="Resources\verified.png" />
     <None Include="Resources\upload.png" />
