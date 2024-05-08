@@ -88,7 +88,21 @@ namespace project
         {
             sidebar.Width = 0;
             DbManager db = new DbManager();
-            if (Loggedin) MessageBox.Show($"Logged in as {db.SelectAccTypeById(this.Id)}");/*
+            if (Loggedin)
+            {
+                MessageBox.Show($"Logged in as {db.SelectAccTypeById(this.Id)}");
+                if(db.SelectAccTypeById(this.Id) == "admin")
+                {
+                    button3.Visible = false;
+                    button4.Visible = false;
+                    profile.Visible = true;
+                    customerOrder.Visible = false;
+                    adminPanel.Visible = true;
+                }
+            }
+
+
+            /*
             if(db.SelectCount("Retaurant") % 8 == 0)
             {
                 for (int i = 0; i < db.SelectCount("Restaurant"); i++)

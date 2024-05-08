@@ -123,7 +123,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.SlateBlue;
             this.button1.Image = global::project.Properties.Resources.cross;
-            this.button1.Location = new System.Drawing.Point(816, 0);
+            this.button1.Location = new System.Drawing.Point(819, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(55, 55);
             this.button1.TabIndex = 1;
