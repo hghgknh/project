@@ -63,9 +63,29 @@ namespace project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _138066265_117340613570402_835547964376461203_n {
+            get {
+                object obj = ResourceManager.GetObject("138066265_117340613570402_835547964376461203_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _2652401_QFSSL_SupremePizza_00072_d910a935ba7d448e8c7545a963ed7101 {
             get {
                 object obj = ResourceManager.GetObject("_2652401_QFSSL_SupremePizza_00072_d910a935ba7d448e8c7545a963ed7101", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _360_F_249582332_DcR8e5IHqgB32U7AjdBqbjMhhSfkBcaE1 {
+            get {
+                object obj = ResourceManager.GetObject("360_F_249582332_DcR8e5IHqgB32U7AjdBqbjMhhSfkBcaE1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +283,39 @@ namespace project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap download {
+            get {
+                object obj = ResourceManager.GetObject("download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fb78c539dea435e436d12f9700c31790 {
             get {
                 object obj = ResourceManager.GetObject("fb78c539dea435e436d12f9700c31790", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fb78c539dea435e436d12f9700c317901 {
+            get {
+                object obj = ResourceManager.GetObject("fb78c539dea435e436d12f9700c317901", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -423,9 +473,9 @@ namespace project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Shapur_branded_restaurant_front_2 {
+        internal static System.Drawing.Bitmap Shapur_branded_restaurant_front_21 {
             get {
-                object obj = ResourceManager.GetObject("Shapur_branded_restaurant_front_2", resourceCulture);
+                object obj = ResourceManager.GetObject("Shapur-branded-restaurant-front-21", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

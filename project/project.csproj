@@ -275,6 +275,13 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\download.jpg" />
+    <None Include="Resources\138066265_117340613570402_835547964376461203_n.jpg" />
+    <None Include="Resources\Shapur-branded-restaurant-front-22.jpg" />
+    <None Include="Resources\Shapur-branded-restaurant-front-21.jpg" />
+    <None Include="Resources\fb78c539dea435e436d12f9700c317901.jpg" />
+    <None Include="Resources\360_F_249582332_DcR8e5IHqgB32U7AjdBqbjMhhSfkBcaE1.jpg" />
     <None Include="Resources\payment-method.png" />
     <None Include="Resources\debit-card.png" />
     <None Include="Resources\checked.png" />
