@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace project
 {
-    internal class Restaurant
+    public class Restaurant
     {
         int id;
         string restaurant_img;

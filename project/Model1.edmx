@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="location" Type="varchar" MaxLength="50" />
+          <Property Name="phone_num" Type="varchar" MaxLength="10" />
+          <Property Name="type" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="Food">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="food_img" Type="image" />
+          <Property Name="food_name" Type="varchar" MaxLength="50" />
+          <Property Name="food_price" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="account_id" Type="int" />
+          <Property Name="food_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Restaurant">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="restaurant_img" Type="image" />
+          <Property Name="rastaurant_name" Type="varchar" MaxLength="25" />
+          <Property Name="restaurant_location" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Restaurant_Food">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="restaurant_id" Type="int" />
+          <Property Name="food_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Review">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="restaurant_id" Type="int" />
+          <Property Name="account_id" Type="int" />
+          <Property Name="review" Type="int" />
+        </EntityType>
+        <Association Name="FK__Orders__account___756D6ECB">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="account_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__food_id__74794A92">
+          <End Role="Food" Type="Self.Food" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Food">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="food_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Restauran__food___42E1EEFE">
+          <End Role="Food" Type="Self.Food" Multiplicity="0..1" />
+          <End Role="Restaurant_Food" Type="Self.Restaurant_Food" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Food">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Restaurant_Food">
+              <PropertyRef Name="food_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Restauran__resta__51300E55">
+          <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="0..1" />
+          <End Role="Restaurant_Food" Type="Self.Restaurant_Food" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Restaurant_Food">
+              <PropertyRef Name="restaurant_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Review__account___09746778">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="Review" Type="Self.Review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Review">
+              <PropertyRef Name="account_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Review__restaura__0A688BB1">
+          <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="0..1" />
+          <End Role="Review" Type="Self.Review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Review">
+              <PropertyRef Name="restaurant_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Database1ModelStoreContainer">
+          <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Food" EntityType="Self.Food" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Restaurant" EntityType="Self.Restaurant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Restaurant_Food" EntityType="Self.Restaurant_Food" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Review" EntityType="Self.Review" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Orders__account___756D6ECB" Association="Self.FK__Orders__account___756D6ECB">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__food_id__74794A92" Association="Self.FK__Orders__food_id__74794A92">
+            <End Role="Food" EntitySet="Food" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Restauran__food___42E1EEFE" Association="Self.FK__Restauran__food___42E1EEFE">
+            <End Role="Food" EntitySet="Food" />
+            <End Role="Restaurant_Food" EntitySet="Restaurant_Food" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Restauran__resta__51300E55" Association="Self.FK__Restauran__resta__51300E55">
+            <End Role="Restaurant" EntitySet="Restaurant" />
+            <End Role="Restaurant_Food" EntitySet="Restaurant_Food" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Review__account___09746778" Association="Self.FK__Review__account___09746778">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="Review" EntitySet="Review" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Review__restaura__0A688BB1" Association="Self.FK__Review__restaura__0A688BB1">
+            <End Role="Restaurant" EntitySet="Restaurant" />
+            <End Role="Review" EntitySet="Review" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phone_num" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="type" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__account___756D6ECB" FromRole="Account" ToRole="Orders" />
+          <NavigationProperty Name="Reviews" Relationship="Database1Model.FK__Review__account___09746778" FromRole="Account" ToRole="Review" />
+        </EntityType>
+        <EntityType Name="Food">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="food_img" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="food_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="food_price" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__food_id__74794A92" FromRole="Food" ToRole="Orders" />
+          <NavigationProperty Name="Restaurant_Food" Relationship="Self.FK__Restauran__food___42E1EEFE" FromRole="Food" ToRole="Restaurant_Food" />
+        </EntityType>
+        <EntityType Name="Restaurant">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="restaurant_img" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="rastaurant_name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="restaurant_location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Restaurant_Food" Relationship="Self.FK__Restauran__resta__51300E55" FromRole="Restaurant" ToRole="Restaurant_Food" />
+          <NavigationProperty Name="Reviews" Relationship="Database1Model.FK__Review__restaura__0A688BB1" FromRole="Restaurant" ToRole="Review" />
+        </EntityType>
+        <EntityType Name="Restaurant_Food">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="restaurant_id" Type="Int32" />
+          <Property Name="food_id" Type="Int32" />
+          <NavigationProperty Name="Food" Relationship="Self.FK__Restauran__food___42E1EEFE" FromRole="Restaurant_Food" ToRole="Food" />
+          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Restauran__resta__51300E55" FromRole="Restaurant_Food" ToRole="Restaurant" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="account_id" Type="Int32" />
+          <Property Name="food_id" Type="Int32" />
+          <NavigationProperty Name="Account" Relationship="Self.FK__Orders__account___756D6ECB" FromRole="Orders" ToRole="Account" />
+          <NavigationProperty Name="Food" Relationship="Self.FK__Orders__food_id__74794A92" FromRole="Orders" ToRole="Food" />
+        </EntityType>
+        <Association Name="FK__Orders__account___756D6ECB">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="account_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__food_id__74794A92">
+          <End Role="Food" Type="Self.Food" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Food">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="food_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Restauran__food___42E1EEFE">
+          <End Role="Food" Type="Self.Food" Multiplicity="0..1" />
+          <End Role="Restaurant_Food" Type="Self.Restaurant_Food" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Food">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Restaurant_Food">
+              <PropertyRef Name="food_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Restauran__resta__51300E55">
+          <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="0..1" />
+          <End Role="Restaurant_Food" Type="Self.Restaurant_Food" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Restaurant_Food">
+              <PropertyRef Name="restaurant_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="Self.Account" />
+          <EntitySet Name="Foods" EntityType="Self.Food" />
+          <EntitySet Name="Restaurants" EntityType="Self.Restaurant" />
+          <EntitySet Name="Restaurant_Food" EntityType="Self.Restaurant_Food" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <AssociationSet Name="FK__Orders__account___756D6ECB" Association="Self.FK__Orders__account___756D6ECB">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__food_id__74794A92" Association="Self.FK__Orders__food_id__74794A92">
+            <End Role="Food" EntitySet="Foods" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Restauran__food___42E1EEFE" Association="Self.FK__Restauran__food___42E1EEFE">
+            <End Role="Food" EntitySet="Foods" />
+            <End Role="Restaurant_Food" EntitySet="Restaurant_Food" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Restauran__resta__51300E55" Association="Self.FK__Restauran__resta__51300E55">
+            <End Role="Restaurant" EntitySet="Restaurants" />
+            <End Role="Restaurant_Food" EntitySet="Restaurant_Food" />
+          </AssociationSet>
+          <EntitySet Name="Reviews" EntityType="Database1Model.Review" />
+          <AssociationSet Name="FK__Review__account___09746778" Association="Database1Model.FK__Review__account___09746778">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Review" EntitySet="Reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Review__restaura__0A688BB1" Association="Database1Model.FK__Review__restaura__0A688BB1">
+            <End Role="Restaurant" EntitySet="Restaurants" />
+            <End Role="Review" EntitySet="Reviews" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Review">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="restaurant_id" Type="Int32" />
+          <Property Name="account_id" Type="Int32" />
+          <Property Name="review1" Type="Int32" />
+          <NavigationProperty Name="Account" Relationship="Database1Model.FK__Review__account___09746778" FromRole="Review" ToRole="Account" />
+          <NavigationProperty Name="Restaurant" Relationship="Database1Model.FK__Review__restaura__0A688BB1" FromRole="Review" ToRole="Restaurant" />
+        </EntityType>
+        <Association Name="FK__Review__account___09746778">
+          <End Type="Database1Model.Account" Role="Account" Multiplicity="0..1" />
+          <End Type="Database1Model.Review" Role="Review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Review">
+              <PropertyRef Name="account_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Review__restaura__0A688BB1">
+          <End Type="Database1Model.Restaurant" Role="Restaurant" Multiplicity="0..1" />
+          <End Type="Database1Model.Review" Role="Review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Review">
+              <PropertyRef Name="restaurant_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="Database1Model.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="phone_num" ColumnName="phone_num" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Foods">
+            <EntityTypeMapping TypeName="Database1Model.Food">
+              <MappingFragment StoreEntitySet="Food">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="food_img" ColumnName="food_img" />
+                <ScalarProperty Name="food_name" ColumnName="food_name" />
+                <ScalarProperty Name="food_price" ColumnName="food_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Restaurants">
+            <EntityTypeMapping TypeName="Database1Model.Restaurant">
+              <MappingFragment StoreEntitySet="Restaurant">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="restaurant_img" ColumnName="restaurant_img" />
+                <ScalarProperty Name="rastaurant_name" ColumnName="rastaurant_name" />
+                <ScalarProperty Name="restaurant_location" ColumnName="restaurant_location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Restaurant_Food">
+            <EntityTypeMapping TypeName="Database1Model.Restaurant_Food">
+              <MappingFragment StoreEntitySet="Restaurant_Food">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="restaurant_id" ColumnName="restaurant_id" />
+                <ScalarProperty Name="food_id" ColumnName="food_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="Database1Model.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="food_id" ColumnName="food_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reviews">
+            <EntityTypeMapping TypeName="Database1Model.Review">
+              <MappingFragment StoreEntitySet="Review">
+                <ScalarProperty Name="review1" ColumnName="review" />
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="restaurant_id" ColumnName="restaurant_id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

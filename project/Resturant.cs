@@ -60,5 +60,10 @@ namespace project
             btnfav.Visible = true;
             btnfaved.Visible = false;
         }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

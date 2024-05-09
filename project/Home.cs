@@ -62,7 +62,7 @@ namespace project
                 }
             }else
             {
-                sidebar.Width += 1;
+                sidebar.Width += 10;
                 if(sidebar.Width >= 240) {
                     sidebarExpand = true;
                     sidebarTransition.Stop();
@@ -97,7 +97,7 @@ namespace project
                     button4.Visible = false;
                     profile.Visible = true;
                     customerOrder.Visible = false;
-                    adminPanel.Visible = true;
+                    adminPanel.Visible = false;
                 }
             }
 
