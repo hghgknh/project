@@ -59,11 +59,7 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.avtobiografiq = new System.Windows.Forms.Button();
-            this.motivaton = new System.Windows.Forms.Button();
-            this.OtherDocuments = new System.Windows.Forms.Button();
             this.predaibtn = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -86,7 +82,7 @@
             this.panel1.Controls.Add(this.closebtn);
             this.panel1.Controls.Add(this.backbtn);
             this.panel1.Location = new System.Drawing.Point(-1, 1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1195, 59);
             this.panel1.TabIndex = 0;
@@ -98,7 +94,7 @@
             this.minbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minbtn.Image = global::project.Properties.Resources.remove;
             this.minbtn.Location = new System.Drawing.Point(851, 9);
-            this.minbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.minbtn.Margin = new System.Windows.Forms.Padding(4);
             this.minbtn.Name = "minbtn";
             this.minbtn.Size = new System.Drawing.Size(55, 42);
             this.minbtn.TabIndex = 2;
@@ -112,7 +108,7 @@
             this.closebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closebtn.Image = global::project.Properties.Resources.cross;
             this.closebtn.Location = new System.Drawing.Point(913, 7);
-            this.closebtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.closebtn.Margin = new System.Windows.Forms.Padding(4);
             this.closebtn.Name = "closebtn";
             this.closebtn.Size = new System.Drawing.Size(64, 46);
             this.closebtn.TabIndex = 1;
@@ -125,7 +121,7 @@
             this.backbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backbtn.Image = global::project.Properties.Resources.back_button;
             this.backbtn.Location = new System.Drawing.Point(4, 4);
-            this.backbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.backbtn.Margin = new System.Windows.Forms.Padding(4);
             this.backbtn.Name = "backbtn";
             this.backbtn.Size = new System.Drawing.Size(51, 46);
             this.backbtn.TabIndex = 0;
@@ -162,7 +158,7 @@
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel2.Location = new System.Drawing.Point(245, 113);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(183, 29);
             this.panel2.TabIndex = 5;
@@ -170,7 +166,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(-1, -1);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(183, 29);
@@ -195,7 +191,7 @@
             this.panel3.Controls.Add(this.textBox3);
             this.panel3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel3.Location = new System.Drawing.Point(480, 113);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(183, 29);
             this.panel3.TabIndex = 5;
@@ -203,7 +199,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(-1, -1);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(183, 29);
@@ -227,7 +223,7 @@
             this.panel4.Controls.Add(this.textBox4);
             this.panel4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel4.Location = new System.Drawing.Point(12, 202);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(183, 29);
             this.panel4.TabIndex = 5;
@@ -235,7 +231,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(-1, -1);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(183, 29);
@@ -259,7 +255,7 @@
             this.panel5.Controls.Add(this.textBox6);
             this.panel5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel5.Location = new System.Drawing.Point(16, 324);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(183, 29);
             this.panel5.TabIndex = 5;
@@ -267,7 +263,7 @@
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(-1, -1);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(183, 29);
@@ -291,7 +287,7 @@
             this.panel6.Controls.Add(this.textBox5);
             this.panel6.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel6.Location = new System.Drawing.Point(245, 202);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(183, 29);
             this.panel6.TabIndex = 5;
@@ -299,7 +295,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(-1, -1);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(183, 29);
@@ -323,7 +319,7 @@
             this.panel7.Controls.Add(this.textBox7);
             this.panel7.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel7.Location = new System.Drawing.Point(245, 324);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(183, 29);
             this.panel7.TabIndex = 5;
@@ -331,7 +327,7 @@
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(-1, -1);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(183, 29);
@@ -368,7 +364,7 @@
             this.panel8.Controls.Add(this.textBox9);
             this.panel8.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel8.Location = new System.Drawing.Point(480, 324);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(183, 29);
             this.panel8.TabIndex = 8;
@@ -376,7 +372,7 @@
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(-1, -1);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(4);
             this.textBox9.Multiline = true;
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(183, 29);
@@ -401,7 +397,7 @@
             this.panel9.Controls.Add(this.textBox8);
             this.panel9.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel9.Location = new System.Drawing.Point(711, 324);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(183, 29);
             this.panel9.TabIndex = 7;
@@ -409,7 +405,7 @@
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(-1, -1);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(4);
             this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(183, 29);
@@ -426,51 +422,6 @@
             this.label11.TabIndex = 6;
             this.label11.Text = "Наслено Място:";
             // 
-            // avtobiografiq
-            // 
-            this.avtobiografiq.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.avtobiografiq.FlatAppearance.BorderSize = 0;
-            this.avtobiografiq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.avtobiografiq.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.avtobiografiq.Location = new System.Drawing.Point(12, 468);
-            this.avtobiografiq.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.avtobiografiq.Name = "avtobiografiq";
-            this.avtobiografiq.Size = new System.Drawing.Size(289, 62);
-            this.avtobiografiq.TabIndex = 9;
-            this.avtobiografiq.Text = "Автобиография:";
-            this.avtobiografiq.UseVisualStyleBackColor = false;
-            this.avtobiografiq.Click += new System.EventHandler(this.avtobiografiq_Click);
-            // 
-            // motivaton
-            // 
-            this.motivaton.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.motivaton.FlatAppearance.BorderSize = 0;
-            this.motivaton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.motivaton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.motivaton.Location = new System.Drawing.Point(349, 468);
-            this.motivaton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.motivaton.Name = "motivaton";
-            this.motivaton.Size = new System.Drawing.Size(289, 62);
-            this.motivaton.TabIndex = 10;
-            this.motivaton.Text = "Мотивационно писмо:";
-            this.motivaton.UseVisualStyleBackColor = false;
-            this.motivaton.Click += new System.EventHandler(this.motivaton_Click);
-            // 
-            // OtherDocuments
-            // 
-            this.OtherDocuments.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.OtherDocuments.FlatAppearance.BorderSize = 0;
-            this.OtherDocuments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OtherDocuments.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OtherDocuments.Location = new System.Drawing.Point(687, 468);
-            this.OtherDocuments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.OtherDocuments.Name = "OtherDocuments";
-            this.OtherDocuments.Size = new System.Drawing.Size(289, 62);
-            this.OtherDocuments.TabIndex = 11;
-            this.OtherDocuments.Text = "Допълнителни документи:";
-            this.OtherDocuments.UseVisualStyleBackColor = false;
-            this.OtherDocuments.Click += new System.EventHandler(this.OtherDocuments_Click);
-            // 
             // predaibtn
             // 
             this.predaibtn.BackColor = System.Drawing.Color.Lavender;
@@ -478,49 +429,37 @@
             this.predaibtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.predaibtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.predaibtn.Location = new System.Drawing.Point(376, 11);
-            this.predaibtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.predaibtn.Margin = new System.Windows.Forms.Padding(4);
             this.predaibtn.Name = "predaibtn";
             this.predaibtn.Size = new System.Drawing.Size(243, 38);
             this.predaibtn.TabIndex = 12;
             this.predaibtn.Text = "Кандидатствай";
             this.predaibtn.UseVisualStyleBackColor = false;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label12.Location = new System.Drawing.Point(8, 420);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(222, 18);
-            this.label12.TabIndex = 13;
-            this.label12.Text = "Документи за кандидатстване";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
+            this.predaibtn.Click += new System.EventHandler(this.predaibtn_Click);
             // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.SlateBlue;
-            this.panel10.Location = new System.Drawing.Point(3, 404);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel10.Location = new System.Drawing.Point(3, 498);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1049, 12);
+            this.panel10.Size = new System.Drawing.Size(978, 12);
             this.panel10.TabIndex = 3;
             // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.SlateBlue;
             this.panel11.Controls.Add(this.predaibtn);
-            this.panel11.Location = new System.Drawing.Point(-1, 615);
-            this.panel11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel11.Location = new System.Drawing.Point(3, 615);
+            this.panel11.Margin = new System.Windows.Forms.Padding(4);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1049, 53);
+            this.panel11.Size = new System.Drawing.Size(978, 53);
             this.panel11.TabIndex = 14;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(12, 113);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(183, 29);
@@ -535,10 +474,6 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel10);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.OtherDocuments);
-            this.Controls.Add(this.motivaton);
-            this.Controls.Add(this.avtobiografiq);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.panel8);
@@ -560,7 +495,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ApplyDos";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -612,11 +547,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button avtobiografiq;
-        private System.Windows.Forms.Button motivaton;
-        private System.Windows.Forms.Button OtherDocuments;
         private System.Windows.Forms.Button predaibtn;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.TextBox textBox2;

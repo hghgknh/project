@@ -71,5 +71,10 @@ namespace project
         {
 
         }
+
+        private void predaibtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

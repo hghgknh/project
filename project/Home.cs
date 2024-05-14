@@ -97,7 +97,7 @@ namespace project
                     button4.Visible = false;
                     profile.Visible = true;
                     customerOrder.Visible = false;
-                    adminPanel.Visible = false;
+                    //adminPanel.Visible = false;
                 }
             }
 
@@ -113,8 +113,8 @@ namespace project
 
             }*/
             //pictureBox1.Image = 
-            button1.Visible = false;
-            button2.Visible = false;
+            //button1.Visible = false;
+            //button2.Visible = false;
         }
 
         private void profile_Click(object sender, EventArgs e)

@@ -133,7 +133,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(277, 22);
             this.textBox4.TabIndex = 11;
-            this.textBox4.Text = "Email";
+            this.textBox4.Text = "Имейл";
             // 
             // textBox5
             // 
