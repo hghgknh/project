@@ -85,7 +85,7 @@
             this.panel1.Controls.Add(this.exit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1067, 53);
             this.panel1.TabIndex = 5;
@@ -96,7 +96,7 @@
             // 
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
             this.btnMenu.Location = new System.Drawing.Point(13, 4);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenu.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(53, 46);
             this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -109,7 +109,7 @@
             this.minimize.FlatAppearance.BorderSize = 0;
             this.minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minimize.Location = new System.Drawing.Point(905, 4);
-            this.minimize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.minimize.Margin = new System.Windows.Forms.Padding(4);
             this.minimize.Name = "minimize";
             this.minimize.Size = new System.Drawing.Size(72, 46);
             this.minimize.TabIndex = 2;
@@ -122,7 +122,7 @@
             this.exit.FlatAppearance.BorderSize = 0;
             this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit.Location = new System.Drawing.Point(985, 4);
-            this.exit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.exit.Margin = new System.Windows.Forms.Padding(4);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(72, 46);
             this.exit.TabIndex = 0;
@@ -135,11 +135,11 @@
             this.sidebar.BackColor = System.Drawing.Color.SlateBlue;
             this.sidebar.Controls.Add(this.profile);
             this.sidebar.Controls.Add(this.customerOrder);
-            this.sidebar.Controls.Add(this.button3);
             this.sidebar.Controls.Add(this.button4);
+            this.sidebar.Controls.Add(this.button3);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 53);
-            this.sidebar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sidebar.Margin = new System.Windows.Forms.Padding(4);
             this.sidebar.Name = "sidebar";
             this.sidebar.Size = new System.Drawing.Size(320, 501);
             this.sidebar.TabIndex = 8;
@@ -149,7 +149,7 @@
             // 
             this.profile.BackColor = System.Drawing.Color.Lavender;
             this.profile.Location = new System.Drawing.Point(4, 4);
-            this.profile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.profile.Margin = new System.Windows.Forms.Padding(4);
             this.profile.Name = "profile";
             this.profile.Size = new System.Drawing.Size(309, 57);
             this.profile.TabIndex = 9;
@@ -161,7 +161,7 @@
             // 
             this.customerOrder.BackColor = System.Drawing.Color.Lavender;
             this.customerOrder.Location = new System.Drawing.Point(4, 69);
-            this.customerOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.customerOrder.Margin = new System.Windows.Forms.Padding(4);
             this.customerOrder.Name = "customerOrder";
             this.customerOrder.Size = new System.Drawing.Size(309, 57);
             this.customerOrder.TabIndex = 10;
@@ -172,8 +172,8 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Lavender;
-            this.button3.Location = new System.Drawing.Point(4, 134);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Location = new System.Drawing.Point(4, 199);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(309, 57);
             this.button3.TabIndex = 11;
@@ -184,8 +184,8 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Lavender;
-            this.button4.Location = new System.Drawing.Point(4, 199);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Location = new System.Drawing.Point(4, 134);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(309, 57);
             this.button4.TabIndex = 12;
@@ -412,7 +412,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Home";
             this.Text = "Restaurants";
             this.Load += new System.EventHandler(this.Restaurants_Load);
