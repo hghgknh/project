@@ -158,7 +158,7 @@
             this.pnlInfo.Controls.Add(this.btnUser);
             this.pnlInfo.Controls.Add(this.label1);
             this.pnlInfo.Controls.Add(this.btnRest);
-            this.pnlInfo.Location = new System.Drawing.Point(6, 62);
+            this.pnlInfo.Location = new System.Drawing.Point(3, 59);
             this.pnlInfo.Name = "pnlInfo";
             this.pnlInfo.Size = new System.Drawing.Size(871, 474);
             this.pnlInfo.TabIndex = 5;
@@ -427,7 +427,7 @@
             this.pnlRestInfo.Controls.Add(this.FirstName);
             this.pnlRestInfo.Controls.Add(this.napredRest);
             this.pnlRestInfo.Controls.Add(this.NazadMenu);
-            this.pnlRestInfo.Location = new System.Drawing.Point(6, 60);
+            this.pnlRestInfo.Location = new System.Drawing.Point(2, 59);
             this.pnlRestInfo.Name = "pnlRestInfo";
             this.pnlRestInfo.Size = new System.Drawing.Size(876, 477);
             this.pnlRestInfo.TabIndex = 24;

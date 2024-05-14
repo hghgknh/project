@@ -71,18 +71,6 @@ namespace project
                 }
             }
             else img_path = string.Empty;
-            /*
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Filter = "IMG files (*.img)|*.img"; // set the file filter to.img files
-            saveFileDialog1.DefaultExt = "img"; // set the default file extension to.img
-
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                using (Stream s = File.Open(saveFileDialog1.FileName, FileMode.CreateNew))
-                {
-                    btnsnimkiRest.Image.Save(s, System.Drawing.Imaging.ImageFormat.MemoryBmp);
-                }
-            }*/
         }
 
         private void button5_Click(object sender, EventArgs e)
