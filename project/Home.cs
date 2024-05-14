@@ -183,5 +183,10 @@ namespace project
             resturant.Loggedin = this.Loggedin;
             resturant.LocationDel = this.LocationDel;
         }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
