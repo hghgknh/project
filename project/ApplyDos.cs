@@ -12,6 +12,9 @@ namespace project
 {
     public partial class ApplyDos : Form
     {
+        public int Id { get; set; }
+        public bool Loggedin { get; set; }
+        public string LocationDel { get; set; }
         public ApplyDos()
         {
             InitializeComponent();
@@ -19,7 +22,11 @@ namespace project
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Home home = new Home();
+            home.LocationDel = this.LocationDel;
+            home.Loggedin = this.Loggedin;
+            home.Show();
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)

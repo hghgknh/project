@@ -31,7 +31,7 @@ namespace project
             Register register = new Register();
             register.LocationDel = this.LocationDel;
             register.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -60,9 +60,11 @@ namespace project
 
         private void back_Click(object sender, EventArgs e)
         {
-            Home restaurants = new Home();
-            //restaurants.Show();
-            this.Hide();
+            Home home = new Home();
+            home.LocationDel = this.LocationDel;
+            home.Loggedin = false;
+            home.Show();
+            this.Close();
         }
 
         private void textBox1_Enter(object sender, EventArgs e)

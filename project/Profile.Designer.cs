@@ -30,9 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.Profil = new System.Windows.Forms.Label();
-            this.minbtn = new System.Windows.Forms.Button();
-            this.closebtn = new System.Windows.Forms.Button();
-            this.backbtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,12 +43,15 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.minbtn = new System.Windows.Forms.Button();
+            this.closebtn = new System.Windows.Forms.Button();
+            this.backbtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -86,44 +86,6 @@
             this.Profil.Text = "Профил";
             this.Profil.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Profil_MouseDown);
             this.Profil.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Profil_MouseMove);
-            // 
-            // minbtn
-            // 
-            this.minbtn.BackColor = System.Drawing.Color.SlateBlue;
-            this.minbtn.FlatAppearance.BorderSize = 0;
-            this.minbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minbtn.Image = global::project.Properties.Resources.remove;
-            this.minbtn.Location = new System.Drawing.Point(770, 7);
-            this.minbtn.Name = "minbtn";
-            this.minbtn.Size = new System.Drawing.Size(41, 34);
-            this.minbtn.TabIndex = 2;
-            this.minbtn.UseVisualStyleBackColor = false;
-            this.minbtn.Click += new System.EventHandler(this.minbtn_Click);
-            // 
-            // closebtn
-            // 
-            this.closebtn.BackColor = System.Drawing.Color.SlateBlue;
-            this.closebtn.FlatAppearance.BorderSize = 0;
-            this.closebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closebtn.Image = global::project.Properties.Resources.cross;
-            this.closebtn.Location = new System.Drawing.Point(817, 6);
-            this.closebtn.Name = "closebtn";
-            this.closebtn.Size = new System.Drawing.Size(48, 37);
-            this.closebtn.TabIndex = 1;
-            this.closebtn.UseVisualStyleBackColor = false;
-            this.closebtn.Click += new System.EventHandler(this.closebtn_Click);
-            // 
-            // backbtn
-            // 
-            this.backbtn.FlatAppearance.BorderSize = 0;
-            this.backbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backbtn.Image = global::project.Properties.Resources.back_button;
-            this.backbtn.Location = new System.Drawing.Point(3, 3);
-            this.backbtn.Name = "backbtn";
-            this.backbtn.Size = new System.Drawing.Size(38, 37);
-            this.backbtn.TabIndex = 0;
-            this.backbtn.UseVisualStyleBackColor = true;
-            this.backbtn.Click += new System.EventHandler(this.backbtn_Click);
             // 
             // label1
             // 
@@ -247,7 +209,42 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(136, 451);
             this.panel10.TabIndex = 18;
-            this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(83, 47);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(651, 98);
+            this.textBox1.TabIndex = 1;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(83, 160);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(651, 98);
+            this.textBox2.TabIndex = 19;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(83, 272);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(651, 98);
+            this.textBox3.TabIndex = 20;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(83, 384);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(651, 98);
+            this.textBox4.TabIndex = 21;
             // 
             // button1
             // 
@@ -262,38 +259,43 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // minbtn
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(83, 47);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(651, 98);
-            this.textBox1.TabIndex = 1;
+            this.minbtn.BackColor = System.Drawing.Color.SlateBlue;
+            this.minbtn.FlatAppearance.BorderSize = 0;
+            this.minbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minbtn.Image = global::project.Properties.Resources.remove;
+            this.minbtn.Location = new System.Drawing.Point(770, 7);
+            this.minbtn.Name = "minbtn";
+            this.minbtn.Size = new System.Drawing.Size(41, 34);
+            this.minbtn.TabIndex = 2;
+            this.minbtn.UseVisualStyleBackColor = false;
+            this.minbtn.Click += new System.EventHandler(this.minbtn_Click);
             // 
-            // textBox2
+            // closebtn
             // 
-            this.textBox2.Location = new System.Drawing.Point(83, 160);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(651, 98);
-            this.textBox2.TabIndex = 19;
+            this.closebtn.BackColor = System.Drawing.Color.SlateBlue;
+            this.closebtn.FlatAppearance.BorderSize = 0;
+            this.closebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closebtn.Image = global::project.Properties.Resources.cross;
+            this.closebtn.Location = new System.Drawing.Point(817, 6);
+            this.closebtn.Name = "closebtn";
+            this.closebtn.Size = new System.Drawing.Size(48, 37);
+            this.closebtn.TabIndex = 1;
+            this.closebtn.UseVisualStyleBackColor = false;
+            this.closebtn.Click += new System.EventHandler(this.closebtn_Click);
             // 
-            // textBox3
+            // backbtn
             // 
-            this.textBox3.Location = new System.Drawing.Point(83, 272);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(651, 98);
-            this.textBox3.TabIndex = 20;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(83, 384);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(651, 98);
-            this.textBox4.TabIndex = 21;
+            this.backbtn.FlatAppearance.BorderSize = 0;
+            this.backbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backbtn.Image = global::project.Properties.Resources.back_button;
+            this.backbtn.Location = new System.Drawing.Point(3, 3);
+            this.backbtn.Name = "backbtn";
+            this.backbtn.Size = new System.Drawing.Size(38, 37);
+            this.backbtn.TabIndex = 0;
+            this.backbtn.UseVisualStyleBackColor = true;
+            this.backbtn.Click += new System.EventHandler(this.backbtn_Click);
             // 
             // Profile
             // 

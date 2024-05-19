@@ -50,18 +50,12 @@ namespace project
 
         private void Profile_Load(object sender, EventArgs e)
         {
-            Account account = new Account();
             DbManager db = new DbManager();
-            db.SelectPerAcc(this.Id);
+            Account account = db.SelectPerAcc(this.Id);
             textBox1.Text = account.Name;
             textBox2.Text = account.Password;
             textBox3.Text = account.Email;
             textBox4.Text = account.Location;
-        }
-
-        private void panel10_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void minbtn_Click(object sender, EventArgs e)
@@ -78,15 +72,13 @@ namespace project
         {
             DbManager db = new DbManager();
             Account account = new Account();
+            account.Id = this.Id;
             account.Name = textBox1.Text;
             account.Password = textBox2.Text;
             account.Email = textBox3.Text;
             account.Location = textBox4.Text;
-            if(db.UpdateAcc(account))
-            {
-                MessageBox.Show("Akaunta e udejtnat", "Update complete", MessageBoxButtons.OK);
-
-            }
+            if (db.UpdateAcc(account)) MessageBox.Show("Akaunta e udejtnat", "Update complete", MessageBoxButtons.OK);
+            else MessageBox.Show("Ima greshka", "akaunta ne e updejtnat uspeshno", MessageBoxButtons.OK);
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)

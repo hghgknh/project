@@ -15,6 +15,7 @@ namespace project
         public int Id { get; set; }
         public bool Loggedin { get; set; }
         public string LocationDel {  get; set; }
+        public List<string> Poruchka {  get; set; }
         public Poruchki()
         {
             InitializeComponent();
@@ -22,7 +23,10 @@ namespace project
 
         private void Poruchki_Load(object sender, EventArgs e)
         {
-
+            foreach (string i in this.Poruchka)
+            {
+                listBox1.Items.Add(i);
+            }
         }
 
         private void closebtn_Click(object sender, EventArgs e)
@@ -46,6 +50,11 @@ namespace project
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

@@ -83,6 +83,16 @@ namespace project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _360_F_249582332_DcR8e5IHqgB32U7AjdBqbjMhhSfkBcaE {
+            get {
+                object obj = ResourceManager.GetObject("_360_F_249582332_DcR8e5IHqgB32U7AjdBqbjMhhSfkBcaE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _360_F_249582332_DcR8e5IHqgB32U7AjdBqbjMhhSfkBcaE1 {
             get {
                 object obj = ResourceManager.GetObject("360_F_249582332_DcR8e5IHqgB32U7AjdBqbjMhhSfkBcaE1", resourceCulture);
@@ -473,9 +483,9 @@ namespace project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Shapur_branded_restaurant_front_21 {
+        internal static System.Drawing.Bitmap Shapur_branded_restaurant_front_2 {
             get {
-                object obj = ResourceManager.GetObject("Shapur-branded-restaurant-front-21", resourceCulture);
+                object obj = ResourceManager.GetObject("Shapur_branded_restaurant_front_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

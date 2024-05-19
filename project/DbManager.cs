@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Principal;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace project
 {
@@ -203,15 +204,13 @@ namespace project
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
             adapter.Fill(table);
-            adapter.Dispose();
             Account acc = new Account();
-            acc.Id = int.Parse(table.Rows[0]["id"].ToString());
-            acc.Name = table.Rows[0]["name"].ToString();
-            acc.Password = table.Rows[0]["password"].ToString();
-            acc.Email = table.Rows[0]["email"].ToString();
-            acc.Location = table.Rows[0]["location"].ToString();
-            //acc.Phone_num = table.Rows[0]["phone_num"].ToString();
-            //acc.Type = table.Rows[0]["type"].ToString();
+            acc.Id = int.Parse(table.Rows[0]["Id"].ToString());
+            acc.Name = table.Rows[0]["Name"].ToString();
+            acc.Password = table.Rows[0]["Password"].ToString();
+            acc.Location = table.Rows[0]["Location"].ToString();
+            acc.Email = table.Rows[0]["Email"].ToString();
+            adapter.Dispose();
             return acc;
         }
         public int SelectCount(string a)
@@ -225,20 +224,7 @@ namespace project
             int x = Convert.ToInt32(cmd.ExecuteScalar());
             return x;
         }
-        public DataTable SelectCountid_Restaurants(int y, int z)
-        {
-            SqlCommand cmd = new SqlCommand($"Select * From Restaurant Order by Id Offset {y} Limit {z}", connection);
-            //cmd.Parameters.AddWithValue("@id", x);     int x,
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            adapter.Dispose();
-            Restaurant restaurant = new Restaurant();
-            restaurant.Id = int.Parse(table.Rows[0]["id"].ToString());
-            restaurant.Restaurant_img = table.Rows[0]["restaurant_img"].ToString();
-            restaurant.Restaurant_name = table.Rows[0]["restaurant_name"].ToString();
-            return table;
-        }
+        /*
         public bool InsertProducts(Products products)
         {
             SqlCommand cmd = new SqlCommand("Insert into Products VALUES(" +
@@ -255,7 +241,7 @@ namespace project
             {
                 return false;
             }
-        }
+        }*/
         public DataTable SelectRestaurantFood(int a)
         {
             SqlCommand cmd = new SqlCommand($"SELECT Restaurant.restarant_name,Food.food_name,Food.food_price\r\n" +
@@ -307,13 +293,14 @@ namespace project
                 return false;
             }
         }
-        public bool InsertImage(string x, string a, string b)
+        public bool InsertImage(string x, string a, string b, int y)
         {
             SqlCommand cmd = new SqlCommand("INSERT INTO Restaurant VALUES ("+
-                "@image, @restaurant_name)", connection);
+                "@image, @restaurant_name, @restaurant_location, @account_id)", connection);
             cmd.Parameters.AddWithValue("@image", File.ReadAllBytes($"{x}"));
             cmd.Parameters.AddWithValue("@restaurant_name", a);
             cmd.Parameters.AddWithValue("@restaurant_location", b);
+            cmd.Parameters.AddWithValue("@account_id", y);
 
             try
             {
@@ -324,6 +311,48 @@ namespace project
             {
                 return false;
             }
+        }/*
+        public DataTable SelectRestaurant(int id)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT ImageData, restaurant_name, restaurant_location, account_id FROM Restaurant WHERE Id = @id", connection);
+            cmd.Parameters.AddWithValue("@id", id);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            adapter.Dispose();
+            return table;
+        }
+        public DataTable SelectCountid_Restaurants(int y, int z)
+        {
+            SqlCommand cmd = new SqlCommand($"Select * From Restaurant Order by Id Offset {y} Limit {z}", connection);
+            //cmd.Parameters.AddWithValue("@id", x);     int x,
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            adapter.Dispose();
+            Restaurant restaurant = new Restaurant();
+            restaurant.Id = int.Parse(table.Rows[0]["id"].ToString());
+            restaurant.Restaurant_img = table.Rows[0]["restaurant_img"].ToString();
+            restaurant.Restaurant_name = table.Rows[0]["restaurant_name"].ToString();
+            return table;
+
+        }*/
+        public DataTable SelectRestaurant(int offset, int limit)
+        {
+            string query = $"SELECT ImageData, restaurant_name, restaurant_location, account_id FROM Restaurant OFFSET {offset} LIMIT {limit}";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            adapter.Dispose();
+            return table;
+        }
+        public int SelectRestaurants()
+        {
+            string query = "SELECT COUNT(*) FROM Restaurant";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            int count = (int)cmd.ExecuteScalar();
+            return count;
         }
     }
 }
