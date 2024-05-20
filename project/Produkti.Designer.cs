@@ -37,6 +37,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,8 +51,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -169,6 +169,25 @@
             this.panel3.Size = new System.Drawing.Size(201, 244);
             this.panel3.TabIndex = 18;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(21, 203);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(160, 37);
+            this.textBox1.TabIndex = 17;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(17, 182);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(155, 18);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Време на приготвяне";
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(20, 146);
@@ -278,7 +297,7 @@
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Image = global::project.Properties.Resources.confirm;
-            this.button4.Location = new System.Drawing.Point(30, 22);
+            this.button4.Location = new System.Drawing.Point(30, 40);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(105, 79);
             this.button4.TabIndex = 4;
@@ -293,25 +312,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(17, 182);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(155, 18);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Време на приготвяне";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(21, 203);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 37);
-            this.textBox1.TabIndex = 17;
             // 
             // Produkti
             // 

@@ -37,7 +37,6 @@ namespace project
 
             for (int i = 0; i < restaurants.Count && i < pictureBoxes.Length; i++)
             {
-                napredRest.Visible = false;
                 Restaurant restaurant = restaurants[i];
                 labels[i].Text = restaurant.Restaurant_name;
                 using (var ms = new System.IO.MemoryStream(restaurant.Restaurant_img))
@@ -46,16 +45,6 @@ namespace project
                 }
                 pictureBoxes[i].Tag = restaurant.Id;
                 pictureBoxes[i].Click += PictureBox_Click;
-                if(i > 6)
-                {
-                    NazadMenu.Visible = true;
-                    napredRest.Visible = false;
-                }
-                else
-                {
-                    NazadMenu.Visible = false;
-                    napredRest.Visible = true;
-                }
             }
             for (int i = restaurants.Count; i < pictureBoxes.Length; i++)
             {
@@ -158,7 +147,7 @@ namespace project
             DbManager db = new DbManager();
             if (Loggedin)
             {
-                MessageBox.Show($"Logged in as {db.SelectAccTypeById(this.Id)}");
+                //MessageBox.Show($"Logged in as {db.SelectAccTypeById(this.Id)}");
                 if (db.SelectAccTypeById(this.Id) == "admin")
                 {
                     button3.Visible = true;
@@ -168,10 +157,10 @@ namespace project
                 }
                 else if (db.SelectAccTypeById(this.Id) == "par")
                 {
-                    button3.Visible = true;
-                    button4.Visible = false;
+                    button3.Visible = false;
+                    button4.Visible = true;
                     profile.Visible = true;
-                    customerOrder.Visible = true;
+                    customerOrder.Visible = false;
                 }
                 else if (db.SelectAccTypeById(this.Id) == "dos")
                 {
@@ -277,6 +266,16 @@ namespace project
         }
 
         private void napredRest_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
         }

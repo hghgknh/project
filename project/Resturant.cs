@@ -30,7 +30,7 @@ namespace project
             MessageBox.Show($"tekst da kajem za id -> {this.RestaurantId}", "tekst", MessageBoxButtons.OK);
             DbManager db = new DbManager();
             Restaurant restaurant = new Restaurant();
-            restaurant = db.SelectRestaurant(this.Id);
+            restaurant = db.SelectRestaurant(RestaurantId);
             using (var ms = new System.IO.MemoryStream(restaurant.Restaurant_img))
             {
                 pictureBox1.Image = Image.FromStream(ms);

@@ -242,20 +242,23 @@ namespace project
                 return false;
             }
         }*/
-        public DataTable SelectRestaurantFood(int a)
+        public DataTable SelectRestaurantFood(int x)
         {
-            SqlCommand cmd = new SqlCommand($"SELECT Restaurant.rastaurant_name, Food.food_name, Food.food_price \r\n" + 
+            SqlCommand cmd = new SqlCommand($"SELECT Restaurant.rastaurant_name, Food.food_name, Food.food_price, Food.time\r\n" +
                 $"FROM Restaurant \r\n" +
                 $"INNER JOIN Restaurant_Food ON Restaurant.Id = Restaurant_Food.restaurant_id \r\n" +
                 $"INNER JOIN Food ON Restaurant_Food.food_id = Food.Id \r\n" +
-                $"WHERE Restaurant_Food.restaurant_id = @restaurantId", connection);
+                $"WHERE Restaurant_Food.restaurant_id = @restaurantId;");
+            cmd.Parameters.AddWithValue("@restaurantId", x);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
             adapter.Fill(table);
             adapter.Dispose();
             if (table != null) return table;
             else return null;
-        }/*
+        }
+
+        /*
         public DataTable SelectProducts(int x)
         {
             SqlCommand cmd = new SqlCommand("Select * From Products Where food_id = @id", connection);
@@ -276,11 +279,14 @@ namespace project
             adapter.Dispose();
             return table;
         }*/
-        public bool UpdateAcc(int x)
+        public bool UpdateAcc(Account account)
         {
             SqlCommand cmd = new SqlCommand("UPDATE Account SET name = @name, password = @password, email = @email, location = @location WHERE Id = @id", connection);
-            cmd.Parameters.AddWithValue("@id", x);
-
+            cmd.Parameters.AddWithValue("@id", account.Id);
+            cmd.Parameters.AddWithValue("@@name", account.Name);
+            cmd.Parameters.AddWithValue("@password", account.Password);
+            cmd.Parameters.AddWithValue("@email", account.Email);
+            cmd.Parameters.AddWithValue("@location", account.Location);
             try
             {
                 cmd.ExecuteNonQuery();
@@ -393,47 +399,86 @@ namespace project
 
             return restaurants;
         }
-        public Restaurant SelectRestaurant(int x)
+        public Restaurant SelectRestaurant(int id)
         {
-            SqlCommand cmd = new SqlCommand($"SELECT restaurant_img, restaurant_name, restaurant_location, account_id FROM Restaurant WHERE Id = @id", connection);
-            cmd.Parameters.AddWithValue("@id", x);
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            adapter.Dispose();
-            Restaurant restaurant = new Restaurant();
-            using (SqlDataReader reader = cmd.ExecuteReader())
+            string query = @"
+            SELECT restaurant_img, rastaurant_name, restaurant_location, account_id
+            FROM Restaurant
+            WHERE Id = @id";
+
+            using (SqlCommand cmd = new SqlCommand(query, connection))
             {
-                while (reader.Read())
+                cmd.Parameters.AddWithValue("@id", id);
+
+                try
                 {
-                    restaurant.Id = reader.GetInt32(0);
-                    restaurant.Restaurant_img = (byte[])reader[1];
-                    restaurant.Restaurant_name = reader.GetString(2);
-                    restaurant.Restaurant_location = reader.GetString(3);
-                    restaurant.Account_id = reader.GetInt32(4);
+                    connection.Open();
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        DataTable table = new DataTable();
+                        adapter.Fill(table);
+
+                        if (table.Rows.Count == 0)
+                        {
+                            return null; // No records found
+                        }
+
+                        DataRow row = table.Rows[0];
+                        Restaurant restaurant = new Restaurant
+                        {
+                            Id = id,
+                            Restaurant_img = (byte[])row["restaurant_img"],
+                            Restaurant_name = row["rastaurant_name"].ToString(),
+                            Restaurant_location = row["restaurant_location"].ToString(),
+                            Account_id = (int)row["account_id"]
+                        };
+
+                        return restaurant;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error executing query: " + ex.Message);
+                    return null;
+                }
+                finally
+                {
+                    connection.Close();
                 }
             }
-            return restaurant;
         }
-        public bool InsertFood(string x, string a, string b, int y)
+        public int InsertFood(string food_img, string food_name, string food_price, int time)
         {
-            SqlCommand cmd = new SqlCommand("INSERT INTO Food VALUES (" +
-                "@image, @restaurant_name, @restaurant_location, @account_id)", connection);
-            cmd.Parameters.AddWithValue("@image", File.ReadAllBytes($"{x}"));
-            cmd.Parameters.AddWithValue("@restaurant_name", a);
-            cmd.Parameters.AddWithValue("@restaurant_location", b);
-            cmd.Parameters.AddWithValue("@account_id", y);
+            int newId = -1; // Default value indicating failure
 
-            try
+            string query = @"
+                INSERT INTO Food (food_img, food_name, food_price, time) 
+                VALUES (@food_img, @food_name, @food_price, @time);
+                SELECT CAST(SCOPE_IDENTITY() AS int);";
+
+            using (SqlCommand cmd = new SqlCommand(query, connection))
             {
-                cmd.ExecuteNonQuery();
-                return true;
+                cmd.Parameters.AddWithValue("@food_img", File.ReadAllBytes($"{food_img}"));
+                cmd.Parameters.AddWithValue("@food_name", food_name);
+                cmd.Parameters.AddWithValue("@food_price", food_price);
+                cmd.Parameters.AddWithValue("@time", time);
+
+                try
+                {
+                    newId = (int)cmd.ExecuteScalar(); // ExecuteScalar returns the first column of the first row
+                }
+                catch (Exception ex)
+                {
+                    // Handle exception (e.g., log it)
+                    Console.WriteLine(ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                return false;
-            }
+
+            return newId;
         }
+
+
         public Food SelectFood(int x)
         {
             SqlCommand cmd = new SqlCommand($"SELECT food_name, food_price, time FROM Food WHERE Id = @id", connection);
@@ -461,6 +506,38 @@ namespace project
             {
                 return false;
             }
+        }
+        public bool InsertRestFood(int x, int y)
+        {
+            SqlCommand cmd = new SqlCommand("INSERT INTO Restaurant_Food VALUES (" +
+                "@restaurant_id, @food_id)", connection);
+            cmd.Parameters.AddWithValue("@restaurant_id", x);
+            cmd.Parameters.AddWithValue("@food_id", y);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public DataTable SelectFoodRestaurant(int restaurantId)
+        {
+            SqlCommand cmd = new SqlCommand($"SELECT Restaurant.rastaurant_name, Food.food_name, Food.food_price, Food.time\r\n" +
+                $"FROM Restaurant \r\n" +
+                $"INNER JOIN Restaurant_Food ON Restaurant.Id = Restaurant_Food.restaurant_id \r\n" +
+                $"INNER JOIN Food ON Restaurant_Food.food_id = Food.Id \r\n" +
+                $"WHERE Restaurant_Food.restaurant_id = @restaurantId;");
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            adapter.Dispose();
+            if (table != null) return table;
+            else return null;
         }
     }
 }

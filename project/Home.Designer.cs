@@ -59,8 +59,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.NazadMenu = new System.Windows.Forms.Button();
-            this.napredRest = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.sidebar.SuspendLayout();
@@ -199,8 +197,6 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Lavender;
-            this.panel2.Controls.Add(this.napredRest);
-            this.panel2.Controls.Add(this.NazadMenu);
             this.panel2.Controls.Add(this.panel9);
             this.panel2.Controls.Add(this.panel8);
             this.panel2.Controls.Add(this.panel7);
@@ -342,6 +338,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(155, 163);
             this.panel5.TabIndex = 43;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // pictureBox2
             // 
@@ -352,6 +349,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 35;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click_1);
             // 
             // label9
             // 
@@ -392,34 +390,6 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 17);
             this.label1.TabIndex = 34;
-            // 
-            // NazadMenu
-            // 
-            this.NazadMenu.BackColor = System.Drawing.Color.Lavender;
-            this.NazadMenu.FlatAppearance.BorderSize = 0;
-            this.NazadMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NazadMenu.Image = global::project.Properties.Resources.arrow_left_8591555;
-            this.NazadMenu.Location = new System.Drawing.Point(12, 355);
-            this.NazadMenu.Margin = new System.Windows.Forms.Padding(2);
-            this.NazadMenu.Name = "NazadMenu";
-            this.NazadMenu.Size = new System.Drawing.Size(43, 41);
-            this.NazadMenu.TabIndex = 45;
-            this.NazadMenu.UseVisualStyleBackColor = false;
-            this.NazadMenu.Click += new System.EventHandler(this.NazadMenu_Click);
-            // 
-            // napredRest
-            // 
-            this.napredRest.BackColor = System.Drawing.Color.Lavender;
-            this.napredRest.FlatAppearance.BorderSize = 0;
-            this.napredRest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.napredRest.Image = global::project.Properties.Resources.right_arrow_3849889;
-            this.napredRest.Location = new System.Drawing.Point(739, 355);
-            this.napredRest.Margin = new System.Windows.Forms.Padding(2);
-            this.napredRest.Name = "napredRest";
-            this.napredRest.Size = new System.Drawing.Size(43, 41);
-            this.napredRest.TabIndex = 46;
-            this.napredRest.UseVisualStyleBackColor = false;
-            this.napredRest.Click += new System.EventHandler(this.napredRest_Click);
             // 
             // Home
             // 
@@ -490,7 +460,5 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button NazadMenu;
-        private System.Windows.Forms.Button napredRest;
     }
 }

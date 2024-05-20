@@ -14,9 +14,8 @@ namespace project
         string food_price;
         int time;
 
-        public Food(int id, byte[] food_img, string food_name, string food_price, int time)
+        public Food(byte[] food_img, string food_name, string food_price, int time)
         {
-            this.id = id;
             this.food_img = food_img;
             this.food_name = food_name;
             this.food_price = food_price;
@@ -24,7 +23,6 @@ namespace project
         }
         public Food()
         {
-            this.id = 0;
             this.food_img = null;
             this.food_name = "";
             this.food_price = "";

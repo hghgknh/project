@@ -224,7 +224,7 @@ namespace project
             if (!string.IsNullOrEmpty(openFile.FileName))
             {
                 img_path = openFile.FileName;
-                MessageBox.Show("nekaf tihekst", $"durugutu tihekst s oshte neshtu {img_path}", MessageBoxButtons.OK);
+                MessageBox.Show($"nekaf tihekst {img_path}", "durugutu tihekst s oshte neshtu", MessageBoxButtons.OK);
                 pictureBox1.BackgroundImage = Image.FromFile(img_path);
                 pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
             }

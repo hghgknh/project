@@ -21,6 +21,8 @@ namespace project
         public Produkti()
         {
             InitializeComponent();
+            dataGridView1.AutoGenerateColumns = true;
+            LoadRestaurantFood();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -28,16 +30,21 @@ namespace project
             DbManager db = new DbManager();
             if(textBox3.Text != null && textBox1.Text != null && textBox2.Text != null && imgr)
             {
-                db.InsertFood(this.img_path, textBox2.Text, textBox3.Text, int.Parse(textBox1.Text));
+                int x = db.InsertFood(this.img_path, textBox2.Text, textBox3.Text, int.Parse(textBox1.Text));
+                MessageBox.Show($"ooo {x}", "ooooo", MessageBoxButtons.OK);
+                db.InsertRestFood(this.Id, x);
             }
-            dataGridView1.DataSource = db.SelectFood(this.Id);
+        }
+        private void LoadRestaurantFood()
+        {
+            DbManager db = new DbManager();
+            DataTable dt = db.SelectRestaurantFood(this.RestaurantID);
+            dataGridView1.DataSource = dt;
         }
 
         private void Produkti_Load(object sender, EventArgs e)
         {
-            DbManager db = new DbManager();
-            dataGridView1.DataSource = db.SelectRestaurantFood(RestaurantID);
-            dataGridView1.DataSource = db.SelectFood(this.Id);
+            LoadRestaurantFood();
         }
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -78,7 +85,7 @@ namespace project
         {
             DbManager db = new DbManager();
             db.DeleteFood((int)dataGridView1.CurrentRow.Cells[0].Value);
-            db.SelectFood(this.Id);
+            //db.SelectFood(this.Id);
         }
 
         private void minbtn_Click(object sender, EventArgs e)

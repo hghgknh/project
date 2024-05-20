@@ -136,7 +136,7 @@ namespace project
             }
             else
             {
-                MessageBox.Show("Влезте в акаунт");
+                //MessageBox.Show("Влезте в акаунт");
             }
         }
 
