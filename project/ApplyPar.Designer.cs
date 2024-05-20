@@ -46,15 +46,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.ZadenPanel = new System.Windows.Forms.Panel();
-            this.pnlRestInfo = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.adres1 = new System.Windows.Forms.TextBox();
-            this.EGN = new System.Windows.Forms.TextBox();
-            this.telNomer = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.FirstName = new System.Windows.Forms.TextBox();
-            this.napredRest = new System.Windows.Forms.Button();
-            this.NazadMenu = new System.Windows.Forms.Button();
             this.pnlUser = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button6 = new System.Windows.Forms.Button();
@@ -67,12 +58,21 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.pnlRestInfo = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.adres1 = new System.Windows.Forms.TextBox();
+            this.EGN = new System.Windows.Forms.TextBox();
+            this.telNomer = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.FirstName = new System.Windows.Forms.TextBox();
+            this.napredRest = new System.Windows.Forms.Button();
+            this.NazadMenu = new System.Windows.Forms.Button();
             this.pnlzabackbtn.SuspendLayout();
             this.pnlInfo.SuspendLayout();
             this.ZadenPanel.SuspendLayout();
-            this.pnlRestInfo.SuspendLayout();
             this.pnlUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlRestInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // Kandidatura
@@ -295,115 +295,6 @@
             this.ZadenPanel.Size = new System.Drawing.Size(658, 439);
             this.ZadenPanel.TabIndex = 1;
             // 
-            // pnlRestInfo
-            // 
-            this.pnlRestInfo.Controls.Add(this.btnConfirmPRF);
-            this.pnlRestInfo.Controls.Add(this.label9);
-            this.pnlRestInfo.Controls.Add(this.label10);
-            this.pnlRestInfo.Controls.Add(this.email);
-            this.pnlRestInfo.Controls.Add(this.adres2);
-            this.pnlRestInfo.Controls.Add(this.label5);
-            this.pnlRestInfo.Controls.Add(this.label6);
-            this.pnlRestInfo.Controls.Add(this.label7);
-            this.pnlRestInfo.Controls.Add(this.adres1);
-            this.pnlRestInfo.Controls.Add(this.EGN);
-            this.pnlRestInfo.Controls.Add(this.telNomer);
-            this.pnlRestInfo.Controls.Add(this.label2);
-            this.pnlRestInfo.Controls.Add(this.FirstName);
-            this.pnlRestInfo.Controls.Add(this.napredRest);
-            this.pnlRestInfo.Controls.Add(this.NazadMenu);
-            this.pnlRestInfo.Location = new System.Drawing.Point(2, 48);
-            this.pnlRestInfo.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlRestInfo.Name = "pnlRestInfo";
-            this.pnlRestInfo.Size = new System.Drawing.Size(657, 388);
-            this.pnlRestInfo.TabIndex = 24;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(426, 17);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 18);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Парола";
-            // 
-            // adres1
-            // 
-            this.adres1.Location = new System.Drawing.Point(27, 131);
-            this.adres1.Margin = new System.Windows.Forms.Padding(2);
-            this.adres1.Multiline = true;
-            this.adres1.Name = "adres1";
-            this.adres1.Size = new System.Drawing.Size(152, 28);
-            this.adres1.TabIndex = 14;
-            // 
-            // EGN
-            // 
-            this.EGN.Location = new System.Drawing.Point(429, 37);
-            this.EGN.Margin = new System.Windows.Forms.Padding(2);
-            this.EGN.Multiline = true;
-            this.EGN.Name = "EGN";
-            this.EGN.Size = new System.Drawing.Size(152, 28);
-            this.EGN.TabIndex = 13;
-            // 
-            // telNomer
-            // 
-            this.telNomer.Location = new System.Drawing.Point(229, 37);
-            this.telNomer.Margin = new System.Windows.Forms.Padding(2);
-            this.telNomer.Multiline = true;
-            this.telNomer.Name = "telNomer";
-            this.telNomer.Size = new System.Drawing.Size(152, 28);
-            this.telNomer.TabIndex = 12;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 17);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 18);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Първо име";
-            // 
-            // FirstName
-            // 
-            this.FirstName.Location = new System.Drawing.Point(27, 37);
-            this.FirstName.Margin = new System.Windows.Forms.Padding(2);
-            this.FirstName.Multiline = true;
-            this.FirstName.Name = "FirstName";
-            this.FirstName.Size = new System.Drawing.Size(152, 28);
-            this.FirstName.TabIndex = 2;
-            // 
-            // napredRest
-            // 
-            this.napredRest.BackColor = System.Drawing.Color.Lavender;
-            this.napredRest.FlatAppearance.BorderSize = 0;
-            this.napredRest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.napredRest.Image = global::project.Properties.Resources.right_arrow_3849889;
-            this.napredRest.Location = new System.Drawing.Point(588, 326);
-            this.napredRest.Margin = new System.Windows.Forms.Padding(2);
-            this.napredRest.Name = "napredRest";
-            this.napredRest.Size = new System.Drawing.Size(43, 41);
-            this.napredRest.TabIndex = 1;
-            this.napredRest.UseVisualStyleBackColor = false;
-            this.napredRest.Click += new System.EventHandler(this.napredRest_Click);
-            // 
-            // NazadMenu
-            // 
-            this.NazadMenu.BackColor = System.Drawing.Color.Lavender;
-            this.NazadMenu.FlatAppearance.BorderSize = 0;
-            this.NazadMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NazadMenu.Image = global::project.Properties.Resources.arrow_left_8591555;
-            this.NazadMenu.Location = new System.Drawing.Point(23, 321);
-            this.NazadMenu.Margin = new System.Windows.Forms.Padding(2);
-            this.NazadMenu.Name = "NazadMenu";
-            this.NazadMenu.Size = new System.Drawing.Size(43, 41);
-            this.NazadMenu.TabIndex = 0;
-            this.NazadMenu.UseVisualStyleBackColor = false;
-            this.NazadMenu.Click += new System.EventHandler(this.NazadMenu_Click);
-            // 
             // pnlUser
             // 
             this.pnlUser.Controls.Add(this.pictureBox1);
@@ -544,6 +435,115 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Снимки";
             // 
+            // pnlRestInfo
+            // 
+            this.pnlRestInfo.Controls.Add(this.btnConfirmPRF);
+            this.pnlRestInfo.Controls.Add(this.label9);
+            this.pnlRestInfo.Controls.Add(this.label10);
+            this.pnlRestInfo.Controls.Add(this.email);
+            this.pnlRestInfo.Controls.Add(this.adres2);
+            this.pnlRestInfo.Controls.Add(this.label5);
+            this.pnlRestInfo.Controls.Add(this.label6);
+            this.pnlRestInfo.Controls.Add(this.label7);
+            this.pnlRestInfo.Controls.Add(this.adres1);
+            this.pnlRestInfo.Controls.Add(this.EGN);
+            this.pnlRestInfo.Controls.Add(this.telNomer);
+            this.pnlRestInfo.Controls.Add(this.label2);
+            this.pnlRestInfo.Controls.Add(this.FirstName);
+            this.pnlRestInfo.Controls.Add(this.napredRest);
+            this.pnlRestInfo.Controls.Add(this.NazadMenu);
+            this.pnlRestInfo.Location = new System.Drawing.Point(2, 48);
+            this.pnlRestInfo.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlRestInfo.Name = "pnlRestInfo";
+            this.pnlRestInfo.Size = new System.Drawing.Size(657, 388);
+            this.pnlRestInfo.TabIndex = 24;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(426, 17);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(61, 18);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Парола";
+            // 
+            // adres1
+            // 
+            this.adres1.Location = new System.Drawing.Point(27, 131);
+            this.adres1.Margin = new System.Windows.Forms.Padding(2);
+            this.adres1.Multiline = true;
+            this.adres1.Name = "adres1";
+            this.adres1.Size = new System.Drawing.Size(152, 28);
+            this.adres1.TabIndex = 14;
+            // 
+            // EGN
+            // 
+            this.EGN.Location = new System.Drawing.Point(429, 37);
+            this.EGN.Margin = new System.Windows.Forms.Padding(2);
+            this.EGN.Multiline = true;
+            this.EGN.Name = "EGN";
+            this.EGN.Size = new System.Drawing.Size(152, 28);
+            this.EGN.TabIndex = 13;
+            // 
+            // telNomer
+            // 
+            this.telNomer.Location = new System.Drawing.Point(229, 37);
+            this.telNomer.Margin = new System.Windows.Forms.Padding(2);
+            this.telNomer.Multiline = true;
+            this.telNomer.Name = "telNomer";
+            this.telNomer.Size = new System.Drawing.Size(152, 28);
+            this.telNomer.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(24, 17);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 18);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Първо име";
+            // 
+            // FirstName
+            // 
+            this.FirstName.Location = new System.Drawing.Point(27, 37);
+            this.FirstName.Margin = new System.Windows.Forms.Padding(2);
+            this.FirstName.Multiline = true;
+            this.FirstName.Name = "FirstName";
+            this.FirstName.Size = new System.Drawing.Size(152, 28);
+            this.FirstName.TabIndex = 2;
+            // 
+            // napredRest
+            // 
+            this.napredRest.BackColor = System.Drawing.Color.Lavender;
+            this.napredRest.FlatAppearance.BorderSize = 0;
+            this.napredRest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.napredRest.Image = global::project.Properties.Resources.right_arrow_3849889;
+            this.napredRest.Location = new System.Drawing.Point(588, 326);
+            this.napredRest.Margin = new System.Windows.Forms.Padding(2);
+            this.napredRest.Name = "napredRest";
+            this.napredRest.Size = new System.Drawing.Size(43, 41);
+            this.napredRest.TabIndex = 1;
+            this.napredRest.UseVisualStyleBackColor = false;
+            this.napredRest.Click += new System.EventHandler(this.napredRest_Click);
+            // 
+            // NazadMenu
+            // 
+            this.NazadMenu.BackColor = System.Drawing.Color.Lavender;
+            this.NazadMenu.FlatAppearance.BorderSize = 0;
+            this.NazadMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NazadMenu.Image = global::project.Properties.Resources.arrow_left_8591555;
+            this.NazadMenu.Location = new System.Drawing.Point(23, 321);
+            this.NazadMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.NazadMenu.Name = "NazadMenu";
+            this.NazadMenu.Size = new System.Drawing.Size(43, 41);
+            this.NazadMenu.TabIndex = 0;
+            this.NazadMenu.UseVisualStyleBackColor = false;
+            this.NazadMenu.Click += new System.EventHandler(this.NazadMenu_Click);
+            // 
             // ApplyPar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -561,11 +561,11 @@
             this.pnlInfo.ResumeLayout(false);
             this.pnlInfo.PerformLayout();
             this.ZadenPanel.ResumeLayout(false);
-            this.pnlRestInfo.ResumeLayout(false);
-            this.pnlRestInfo.PerformLayout();
             this.pnlUser.ResumeLayout(false);
             this.pnlUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlRestInfo.ResumeLayout(false);
+            this.pnlRestInfo.PerformLayout();
             this.ResumeLayout(false);
 
         }

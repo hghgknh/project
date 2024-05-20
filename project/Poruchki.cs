@@ -25,7 +25,7 @@ namespace project
         {
             foreach (string i in this.Poruchka)
             {
-                listBox1.Items.Add(i);
+                //listBox1.Items.Add(i);
             }
         }
 

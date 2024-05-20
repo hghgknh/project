@@ -90,7 +90,7 @@ namespace project
 
         private void textBox2_Enter(object sender, EventArgs e)
         {
-            if (!hasBeenClicked || textBox1.Text == "Парола")
+            if (!hasBeenClicked || textBox2.Text == "Парола")
             {
                 TextBox box = sender as TextBox;
                 box.Text = String.Empty;
@@ -100,7 +100,7 @@ namespace project
 
         private void textBox2_Leave(object sender, EventArgs e)
         {
-            if (hasBeenClicked && textBox1.Text == "")
+            if (hasBeenClicked && textBox2.Text == "")
             {
                 TextBox box = sender as TextBox;
                 box.Text = "Парола";

@@ -12,7 +12,12 @@ namespace project
 {
     public partial class Produkti : Form
     {
+        public string img_path;
+        public int Id { get; set; }
+        public bool Loggedin { get; set; }
+        public string LocationDel { get; set; }
         public int RestaurantID { get; set; }
+        private bool imgr = false;
         public Produkti()
         {
             InitializeComponent();
@@ -20,22 +25,85 @@ namespace project
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if(textBox3 != null)
+            DbManager db = new DbManager();
+            if(textBox3.Text != null && textBox1.Text != null && textBox2.Text != null && imgr)
             {
-
+                db.InsertFood(this.img_path, textBox2.Text, textBox3.Text, int.Parse(textBox1.Text));
             }
+            dataGridView1.DataSource = db.SelectFood(this.Id);
         }
 
         private void Produkti_Load(object sender, EventArgs e)
         {
             DbManager db = new DbManager();
             dataGridView1.DataSource = db.SelectRestaurantFood(RestaurantID);
+            dataGridView1.DataSource = db.SelectFood(this.Id);
         }
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DbManager db = new DbManager();
-            dataGridView1.DataSource = db.SelectRestaurantFood(RestaurantID);
+            //dataGridView1.DataSource = db.SelectRestaurantFood(RestaurantID);
+        }
+
+        private void backbtn_Click(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            home.LocationDel = this.LocationDel;
+            home.Loggedin = this.Loggedin;
+            home.Id = this.Id;
+            home.Show();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Title = "Изберете файл";
+            openFile.InitialDirectory = @"C:\";
+            openFile.Filter = "Image Files(*.jpg; *.jpeg; *.png)|*.jpg; *.jpeg; *.png";
+            openFile.ShowDialog();
+            if (!string.IsNullOrEmpty(openFile.FileName))
+            {
+                img_path = openFile.FileName;
+                MessageBox.Show("nekaf tihekst", $"durugutu tihekst s oshte neshtu {img_path}", MessageBoxButtons.OK);
+                pictureBox1.BackgroundImage = Image.FromFile(img_path);
+                pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+                imgr = true;
+            }
+            else img_path = string.Empty;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DbManager db = new DbManager();
+            db.DeleteFood((int)dataGridView1.CurrentRow.Cells[0].Value);
+            db.SelectFood(this.Id);
+        }
+
+        private void minbtn_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void closebtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        Point lastPoint;
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+
+            }
         }
     }
 }

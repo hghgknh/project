@@ -31,13 +31,18 @@ namespace project
         {
             DbManager db = new DbManager();
             if(Loggedin){
-                if(db.SelectAccTypeById(this.Id) == "admin")
+                if(db.SelectAccTypeById(this.Id) == "par")
                 {
-
+                    Produkti produkti = new Produkti();
+                    produkti.LocationDel = this.LocationDel;
+                    produkti.Loggedin = this.Loggedin;
+                    produkti.Id = this.Id;
+                    produkti.Show();
+                    this.Close();
                 }
                 else
                 {
-
+                    MessageBox.Show("Как?", "Въпрос", MessageBoxButtons.OK);
                 }
             }
             else{
@@ -221,7 +226,7 @@ namespace project
                 img_path = openFile.FileName;
                 MessageBox.Show("nekaf tihekst", $"durugutu tihekst s oshte neshtu {img_path}", MessageBoxButtons.OK);
                 pictureBox1.BackgroundImage = Image.FromFile(img_path);
-                pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+                pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
             }
             else img_path = string.Empty;
         }

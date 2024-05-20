@@ -34,7 +34,7 @@ namespace project
         {
             try
             {
-                connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"D:\\visual studio\\project\\project\\Database1.mdf\";Integrated Security=True";
+                connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"D:\\visual studio\\project\\project\\Database1.mdf\";Integrated Security=True;MultipleActiveResultSets=True";
                 connection = new SqlConnection(connectionString);
                 connection.Open();
             }
@@ -244,16 +244,18 @@ namespace project
         }*/
         public DataTable SelectRestaurantFood(int a)
         {
-            SqlCommand cmd = new SqlCommand($"SELECT Restaurant.restarant_name,Food.food_name,Food.food_price\r\n" +
-            $"FROM Restaurant_Food INNER JOIN Food ON Restaurant_food.food_id = Food.Id\r\n" +
-            $"WHERE Restaurant_Food.restaurant_id = {a};", connection);
+            SqlCommand cmd = new SqlCommand($"SELECT Restaurant.rastaurant_name, Food.food_name, Food.food_price \r\n" + 
+                $"FROM Restaurant \r\n" +
+                $"INNER JOIN Restaurant_Food ON Restaurant.Id = Restaurant_Food.restaurant_id \r\n" +
+                $"INNER JOIN Food ON Restaurant_Food.food_id = Food.Id \r\n" +
+                $"WHERE Restaurant_Food.restaurant_id = @restaurantId", connection);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
             adapter.Fill(table);
             adapter.Dispose();
             if (table != null) return table;
             else return null;
-        }
+        }/*
         public DataTable SelectProducts(int x)
         {
             SqlCommand cmd = new SqlCommand("Select * From Products Where food_id = @id", connection);
@@ -273,15 +275,11 @@ namespace project
             adapter.Fill(table);
             adapter.Dispose();
             return table;
-        }
-        public bool UpdateAcc(Account account)
+        }*/
+        public bool UpdateAcc(int x)
         {
             SqlCommand cmd = new SqlCommand("UPDATE Account SET name = @name, password = @password, email = @email, location = @location WHERE Id = @id", connection);
-            cmd.Parameters.AddWithValue("@id", account.Id);
-            cmd.Parameters.AddWithValue("@name", account.Name);
-            cmd.Parameters.AddWithValue("@password", account.Password);
-            cmd.Parameters.AddWithValue("@email", account.Email);
-            cmd.Parameters.AddWithValue("@Location", account.Location);
+            cmd.Parameters.AddWithValue("@id", x);
 
             try
             {
@@ -336,23 +334,133 @@ namespace project
             restaurant.Restaurant_name = table.Rows[0]["restaurant_name"].ToString();
             return table;
 
-        }*/
-        public DataTable SelectRestaurant(int offset, int limit)
+        }*//*
+        public Restaurant SelectRestaurant(int offset, int limit)
         {
-            string query = $"SELECT ImageData, restaurant_name, restaurant_location, account_id FROM Restaurant OFFSET {offset} LIMIT {limit}";
+            string query = $"SELECT restaurant_img, restaurant_name, restaurant_location, account_id FROM Restaurant OFFSET {offset} LIMIT {limit}";
             SqlCommand cmd = new SqlCommand(query, connection);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
             adapter.Fill(table);
             adapter.Dispose();
-            return table;
-        }
+            Restaurant restaurant = new Restaurant();
+            restaurant.Id = int.Parse(table.Rows[0]["id"].ToString());
+            restaurant.Restaurant_img = Convert.FromBase64String(table.Rows[0]["restaurant_img"].ToString());
+            restaurant.Restaurant_name = table.Rows[0]["restaurant_name"].ToString();
+            restaurant.Restaurant_location = table.Rows[0]["restaurant_location"].ToString();
+            restaurant.Account_id = (int)table.Rows[0]["account_id"];// <--    ==   restaurant.Account_id = int.Parse(table.Rows[0]["account_id"].ToString());
+            return restaurant;
+        }*/
+        /*
         public int SelectRestaurants()
         {
-            string query = "SELECT COUNT(*) FROM Restaurant";
-            SqlCommand cmd = new SqlCommand(query, connection);
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Restaurant", connection);
             int count = (int)cmd.ExecuteScalar();
             return count;
+        }*/
+        public int CountRestaurants(int offset, int? limit = null)
+        {
+            SqlCommand cmd = new SqlCommand($"SELECT * FROM Restaurant OFFSET {offset} LIMIT {limit}", connection);
+            int count = (int)cmd.ExecuteScalar();// <--    ==   int count = int.Parse(cmd.ExecuteScalar().ToString());
+            return count;
+        }
+        public List<Restaurant> SelectRestaurants(int offset, int limit = 6)
+        {
+            List<Restaurant> restaurants = new List<Restaurant>();
+
+            // Query to fetch paginated results
+            string query = $"SELECT ID, restaurant_img, rastaurant_name, restaurant_location, account_id FROM Restaurant ORDER BY ID OFFSET @offset ROWS FETCH NEXT @limit ROWS ONLY";
+
+            using (SqlCommand cmd = new SqlCommand(query, connection))
+            {
+                cmd.Parameters.AddWithValue("@offset", offset);
+                cmd.Parameters.AddWithValue("@limit", limit);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Restaurant restaurant = new Restaurant();
+                        restaurant.Id = reader.GetInt32(0);
+                        restaurant.Restaurant_img = (byte[])reader[1]; // Read the image data
+                        restaurant.Restaurant_name = reader.GetString(2); // Adjusted index for correct column
+                        restaurant.Restaurant_location = reader.GetString(3);
+                        restaurant.Account_id = reader.GetInt32(4);
+                        restaurants.Add(restaurant);
+                    }
+                }
+            }
+
+            return restaurants;
+        }
+        public Restaurant SelectRestaurant(int x)
+        {
+            SqlCommand cmd = new SqlCommand($"SELECT restaurant_img, restaurant_name, restaurant_location, account_id FROM Restaurant WHERE Id = @id", connection);
+            cmd.Parameters.AddWithValue("@id", x);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            adapter.Dispose();
+            Restaurant restaurant = new Restaurant();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    restaurant.Id = reader.GetInt32(0);
+                    restaurant.Restaurant_img = (byte[])reader[1];
+                    restaurant.Restaurant_name = reader.GetString(2);
+                    restaurant.Restaurant_location = reader.GetString(3);
+                    restaurant.Account_id = reader.GetInt32(4);
+                }
+            }
+            return restaurant;
+        }
+        public bool InsertFood(string x, string a, string b, int y)
+        {
+            SqlCommand cmd = new SqlCommand("INSERT INTO Food VALUES (" +
+                "@image, @restaurant_name, @restaurant_location, @account_id)", connection);
+            cmd.Parameters.AddWithValue("@image", File.ReadAllBytes($"{x}"));
+            cmd.Parameters.AddWithValue("@restaurant_name", a);
+            cmd.Parameters.AddWithValue("@restaurant_location", b);
+            cmd.Parameters.AddWithValue("@account_id", y);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public Food SelectFood(int x)
+        {
+            SqlCommand cmd = new SqlCommand($"SELECT food_name, food_price, time FROM Food WHERE Id = @id", connection);
+            cmd.Parameters.AddWithValue("@id", x);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            adapter.Dispose();
+            Food food = new Food();
+            food.Food_name = table.Rows[0]["Name"].ToString();
+            food.Food_price = table.Rows[0]["Password"].ToString();
+            food.Time = (int)table.Rows[0]["Location"];
+            return food;
+        }
+        public bool DeleteFood(int a)
+        {
+            SqlCommand cmd = new SqlCommand("DELETE FROM Food WHERE Id = @id", connection);
+            cmd.Parameters.AddWithValue("@id", a);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }
